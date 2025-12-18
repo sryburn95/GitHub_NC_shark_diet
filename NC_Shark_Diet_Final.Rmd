@@ -44,7 +44,7 @@ library(metagMisc)
 
 ```{r}
 #Load phyloseq object of just fecal swabs made in 05 script:
-NC_Sharks.ps<-readRDS(file = "/Users/savannahryburn/Desktop/Chapter2/GitHub_NC_shark_diet/NC_Sharks.ps.RDS")
+NC_Sharks.ps<-readRDS(file = "/Users/savannahryburn/Desktop/Chapter2/GitHub_NC_shark_diet/GitHub_NC_shark_diet/NC_Sharks.ps.RDS")
 
 NC_Sharks.ps
 ```
@@ -74,7 +74,7 @@ newtaxa.df<-as.data.frame(cbind(tax_table(NC_Sharks.ps)))
 
 ##now edit the file and load it in using this
 #(I changed this from row.names = 1 to NULL so that the first column wouldn't be a header - make sure this didn't mess anything else up I did this for the trophic level calculations)
-editedtaxa.df <- read.csv("../Chapter2/editedtaxafile.csv", header = FALSE, row.names = 1)
+editedtaxa.df <- read.csv("/Users/savannahryburn/Desktop/Chapter2/GitHub_NC_shark_diet/GitHub_NC_shark_diet/editedtaxafile.csv", header = FALSE, row.names = 1)
 
 names(editedtaxa.df) <- lapply(editedtaxa.df[1, ], as.character)
 editedtaxa.df <- editedtaxa.df[-1,] 
@@ -87,7 +87,7 @@ newsample.df<-as.data.frame(cbind(sample_data(NC_Sharks.ps)))
 #write.csv(newsample.df, "../Chapter2/samplefiletoedit.csv")
 
 ##now edit the file and load it in using this
-editedsample.df <- read.csv("../Chapter2/editedsamplefile.csv", row.names = "X")
+editedsample.df <- read.csv("/Users/savannahryburn/Desktop/Chapter2/GitHub_NC_shark_diet/GitHub_NC_shark_diet/editedsamplefile.csv", row.names = "X")
 #View(editedsample.df)
 
 #make new phyloseq object so I don't mess up th original
@@ -121,7 +121,1502 @@ NC_Shark_prey_species_merge.ps.1 %>%
 ```
 
 ```{r}
+#### Make a Final Taxa Table with the number of reads assigned to each genus or species ####
 
+#merge motus by prey species
+NC_Shark_prey_species_merge.ps <- tax_glom(NC_Sharks1.ps, taxrank = "species", NArm = FALSE)
+
+NC_Shark_prey_species_merge.ps
+sample_variables(NC_Shark_prey_species_merge.ps)
+rank_names(NC_Shark_prey_species_merge.ps)
+
+#export read table with species or genus (if only genus available) instead of motu/asv now that they've been properly merged
+taxtbl <- as.data.frame(tax_table(NC_Shark_prey_species_merge.ps))
+otutbl<-as.data.frame(otu_table(NC_Shark_prey_species_merge.ps))
+sampletbl<-as.data.frame(sample_data(NC_Shark_prey_species_merge.ps))
+
+otutbl$species <-
+  taxtbl$species[match(rownames(otutbl),rownames(taxtbl))]
+
+otutbl$genus <-
+  taxtbl$genus[match(rownames(otutbl),rownames(taxtbl))]
+
+df<-otutbl %>% relocate(genus)
+df<-df %>% relocate(species, .after = genus)
+
+df1<- as.data.frame(t(df))
+
+df1<- rownames_to_column(df1, var="sample")
+samples.df.1<-rownames_to_column(sampletbl, var="sample")
+df2<- left_join(df1, samples.df.1, by ="sample")
+
+colnames(df2)
+
+#Its giving me an error for all of the ones that end in .x
+df3<- df2 %>% select(-"type",-"plate_no",-"plate_col.x",-"plate_row",-"tag_fwd",-"tag_rev",-"primer_fwd.x",-"primer_rev.x",-"project",-"control_type",-"nb_reads.x",-"nb_motus.x",-"low_contamination_level.x",-"seqdepth_ok.x",-"nb_reads_postmetabaR.x",-"nb_motus_postmetabaR.x",-"date_collected",-"species",-"plate_col.y",-"primer_fwd.y",-"primer_rev.y",-"nb_reads.y",-"nb_motus.y",-"low_contamination_level.y",-"seqdepth_ok.y",-"nb_reads_postmetabaR.y",-"nb_motus_postmetabaR.y")
+
+colnames(df3)
+
+write.csv(df3, "NC_Sharks_samples_by_species_combined_table.csv")
+
+#Flip axis of the data frame
+transformed_df3 <- t(df3)
+write.csv(transformed_df3, "NC_Sharks_samples_by_species_combined_table_flipped.csv")
+
+
+#Make table that includes family and order too
+
+otutbl$species <-
+  taxtbl$species[match(rownames(otutbl),rownames(taxtbl))]
+
+otutbl$genus <-
+  taxtbl$genus[match(rownames(otutbl),rownames(taxtbl))]
+
+otutbl$family <-
+  taxtbl$family[match(rownames(otutbl),rownames(taxtbl))]
+
+otutbl$order <-
+  taxtbl$order[match(rownames(otutbl),rownames(taxtbl))]
+
+df<-otutbl %>% relocate(species) %>% relocate(genus) %>% relocate(family) %>% relocate(order)
+#df<-df %>% relocate(species, .after = genus)
+
+df1<- as.data.frame(t(df))
+
+df1<- rownames_to_column(df1, var="sample")
+samples.df.1<-rownames_to_column(sampletbl, var="sample")
+df2<- left_join(df1, samples.df.1, by ="sample")
+
+colnames(df2)
+
+#Its giving me an error for all of the ones that end in .x
+df3<- df2 %>% select(-"type",-"plate_no",-"plate_col.x",-"plate_row",-"tag_fwd",-"tag_rev",-"primer_fwd.x",-"primer_rev.x",-"project",-"control_type",-"nb_reads.x",-"nb_motus.x",-"low_contamination_level.x",-"seqdepth_ok.x",-"nb_reads_postmetabaR.x",-"nb_motus_postmetabaR.x",-"plate_col.y",-"primer_fwd.y",-"primer_rev.y",-"nb_reads.y",-"nb_motus.y",-"low_contamination_level.y",-"seqdepth_ok.y",-"nb_reads_postmetabaR.y",-"nb_motus_postmetabaR.y")
+
+colnames(df3)
+
+write.csv(df3, "NC_Sharks_samples_by_species_combined_table_with familyand order.csv")
 ```
 
+```{r}
+#remove otus only ID'ed to genus level
+top20species <- names(sort(taxa_sums(NC_Shark_prey_species_merge.ps.1), decreasing=TRUE))[0:20]
+ps.top20species <- transform_sample_counts(NC_Shark_prey_species_merge.ps.1, function(OTU) OTU/sum(OTU))
+ps.top20species <- prune_taxa(top20species, ps.top20species)
+
+#merge motus by prey species with no NAs
+NC_Shark_prey_species_merge1.ps <- tax_glom(NC_Shark_prey_species_merge.ps.1, taxrank = "species", NArm = TRUE)
+
+NC_Shark_prey_species_merge1.ps
+sample_variables(NC_Shark_prey_species_merge1.ps)
+
+NC_Shark_prey_species_merge.ps.1.prop <- transform_sample_counts(NC_Shark_prey_species_merge.ps.1, function(species) species/sum(species))
+```
+
+```{r}
+#Now break this up so its by shark species and they are next to each other
+## Make the POO plot with customize the order
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge.ps.1, method = "pa")
+
+#Top 20
+top20occ = names(sort(taxa_sums(NC_Shark_prey_species_merge.ps.1.PA), decreasing = TRUE)[1:20])
+NC_Shark_prey_species_merge.ps.1.PA.Top20 = prune_taxa(top20occ, NC_Shark_prey_species_merge.ps.1.PA)
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1.PA.Top20)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA.Top20)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Species..scientific.name.)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA.Top20)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+otu_species_key<-taxa_df%>%
+  select(otu,family,genus,species)
+
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(otu_species_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_shark.species_otu_counts<-otu_df_long%>%
+  group_by(Species..scientific.name.,species)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_shark.species_counts<-merge_shark.species_otu_counts%>%
+  group_by(Species..scientific.name.)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_shark.species_counts)
+
+#Custom order the prey species (separate custaceans and fishes)
+merge_shark.species_counts$species <- factor(
+  merge_shark.species_counts$species,
+  levels = c(
+    "Achelous gibbesii", "Arenaeus cribrarius", "Callinectes sapidus",
+    "Callinectes similis", "Penaeus setiferus", "Squilla empusa",
+    "Anchoa hepsetus", "Cynoscion nothus", "Etropus crossotus", "Lagodon rhomboides",
+    "Larimus fasciatus", "Leiostomus xanthurus", "Myrophis punctatus", "Ophichthus gomesii", "Orthopristis chrysoptera","Prionotus longispinosus", "Sphyrna tiburo",
+    "Symphurus plagiusa", "Syngnathus louisianae", "Synodus foetens"))
+
+#plot 
+POO_plot_AllSharks <- ggplot(merge_shark.species_counts, aes(x = Species..scientific.name., y = rel_prct, fill = species)) +
+  geom_bar(stat = "identity", position = "stack", color = NA) +  # Remove borders
+  ylab("Relative Percent of Occurrence") +
+  xlab("Shark Species") +
+  theme_classic() +
+  theme(text = element_text(size = 11)) +
+  theme(axis.text.x = element_text(angle = 0)) +
+  scale_fill_manual(
+    values = c(
+      "Achelous gibbesii"="orange", "Anchoa hepsetus"="darkolivegreen1", "Arenaeus cribrarius"="darksalmon", "Callinectes sapidus"="goldenrod3", "Callinectes similis"="tomato", "Cynoscion nothus"="aquamarine4", "Etropus crossotus"="lightblue", "Lagodon rhomboides"="lightseagreen", "Larimus fasciatus"="slateblue1", "Leiostomus xanthurus"="palegreen", "Myrophis punctatus"="royalblue", "Ophichthus gomesii"="darkgreen","Orthopristis chrysoptera"="green3", "Penaeus setiferus"="red", "Prionotus longispinosus"="slategray2", "Sphyrna tiburo"="yellowgreen", "Squilla empusa"="hotpink1", "Symphurus plagiusa"="purple", "Syngnathus louisianae"="blue", "Synodus foetens"="navyblue"),
+    labels = c(
+      "Achelous gibbesii" = "Achelous gibbesii (iridescent swimming crab)", 
+      "Arenaeus cribrarius" = "Arenaeus cribrarius (speckled swimming crab)", 
+      "Callinectes sapidus" = "Callinectes sapidus (Atlantic blue crab)",
+      "Callinectes similis" = "Callinectes similis (lesser blue crab)", 
+      "Penaeus setiferus" = "Penaeus setiferus (norther white shrimp)", 
+      "Squilla empusa" = "Squilla empusa (mantis shrimp)",
+      "Anchoa hepsetus" = "Anchoa hepsetus (broad-stirped anchovy)", 
+      "Cynoscion nothus" = "Cynoscion nothus (silver seatrout)", 
+      "Etropus crossotus" = "Etropus crossotus (fringed flounder)",
+      "Lagodon rhomboides" = "Lagodon rhomboides (pinfish)",
+      "Larimus fasciatus" = "Larimus fasciatus (banded drum)",
+      "Leiostomus xanthurus" = "Leiostomus xanthurus (spot)", 
+      "Myrophis punctatus" = "Myrophis punctatus (speckled worm eel)", 
+      "Ophichthus gomesii" = "Ophichthus gomesii (shrimp eel)", 
+      "Orthopristis chrysoptera" = "Orthopristis chrysoptera (pigfish)",
+      "Prionotus longispinosus" = "Prionotus longispinosus (bigeye searobin)", 
+      "Sphyrna tiburo" = "Sphyrna tiburo (bonnethead shark)",
+      "Symphurus plagiusa" = "Symphurus plagiusa (blackcheek tonguefish)", 
+      "Syngnathus louisianae" = "Syngnathus louisianae (chain pipefish)", 
+      "Synodus foetens" = "Synodus foetens (inshore lizardfish)"))
+
+POO_plot_AllSharks
+```
+
+```{r}
+## Make the POO table with all prey
+
+#Convert to presence absence: (FOO)
+NC_Sharks1.ps.PA <- phyloseq_standardize_otu_abundance(NC_Sharks1.ps, method = "pa")
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Sharks1.ps.PA)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Sharks1.ps.PA)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Species..scientific.name.)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Sharks1.ps.PA)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+otu_species_key<-taxa_df%>%
+  select(otu,family,genus,species)
+
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(otu_species_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_shark.species_otu_counts<-otu_df_long%>%
+  group_by(Species..scientific.name.,species,genus)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_shark.species_counts<-merge_shark.species_otu_counts%>%
+  group_by(Species..scientific.name.)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_shark.species_counts)
+```
+
+```{r}
+#Stacked POO Bar Plot - Prey trophic level (excludes all NAs, prey gunus and species)
+
+NC_Shark_prey_species_merge_trophic_levels.pa.ps<-phyloseq::tax_glom(NC_Sharks1.ps, taxrank="Trophic_level_rank", NArm=TRUE)
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_Trophic.level <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge_trophic_levels.pa.ps, method = "pa")
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Species..scientific.name.)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+taxa_trophic.level.category_key<-taxa_df%>%
+  select(otu,Trophic_level_rank,family,genus,species)
+
+#(how to I get the taxa table to input the trophic level category )
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(taxa_trophic.level.category_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_prey.trophic.level_otu_counts<-otu_df_long%>%
+  group_by(Species..scientific.name.,Trophic_level_rank)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_prey.trophic.level_counts<-merge_prey.trophic.level_otu_counts%>%
+  group_by(Species..scientific.name.)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_prey.trophic.level_counts)
+
+merge_prey.trophic.level_counts$Trophic_level_rank <- factor(merge_prey.trophic.level_counts$Trophic_level_rank, 
+    levels = c("Carnivore (4.1-4.5)", 
+               "Carnivore (3.6-4.0)", 
+               "Carnivore (3.1-3.5)", 
+               "Planktivore (2.6-3.0)", 
+               "Planktivore (2.0-2.5)"))
+
+#plot 
+NC_Shark_prey_species_merge.ps.1.PA_prey.trophic.level_plot <- ggplot(merge_prey.trophic.level_counts,fill="Trophic_level_rank") +
+  geom_bar(aes(x=Species..scientific.name., y=rel_prct, color=Trophic_level_rank, fill=Trophic_level_rank),stat="identity", position="stack")+
+  ylab("Relative Percent of Occurrence") + 
+  xlab("Shark Species") +
+  theme_classic() + theme(text = element_text(size =11)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_discrete(limits = c("Planktivore (2.0-2.5)", "Planktivore (2.6-3.0)", "Carnivore (3.1-3.5)", "Carnivore (3.6-4.0)", "Carnivore (4.1-4.5)")) +
+  scale_fill_manual(values = c("Carnivore (4.1-4.5)"="darkgreen", 
+                               "Carnivore (3.6-4.0)"="yellowgreen", 
+                               "Carnivore (3.1-3.5)"="lightblue", 
+                               "Planktivore (2.6-3.0)"="tomato", 
+                               "Planktivore (2.0-2.5)"="orange")) + 
+  scale_color_manual(values = c("Carnivore (4.1-4.5)"="darkgreen", 
+                               "Carnivore (3.6-4.0)"="yellowgreen", 
+                               "Carnivore (3.1-3.5)"="lightblue", 
+                               "Planktivore (2.6-3.0)"="tomato", 
+                               "Planktivore (2.0-2.5)"="orange"))
+
+NC_Shark_prey_species_merge.ps.1.PA_prey.trophic.level_plot
+
+
+
+# Try to make a histogram whit no trophic categories
+NC_Shark_prey_species_merge_trophic_levels.pa.ps<-phyloseq::tax_glom(NC_Sharks1.ps, taxrank="Trophic_level", NArm=TRUE)
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_Trophic.level <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge_trophic_levels.pa.ps, method = "pa")
+
+
+plot_bar(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level, x="Trophic_level", fill = "species", facet_grid = "Species..scientific.name.") +
+  geom_bar(aes(color=species, fill=species), stat="identity", position="stack")
+
+plot_bar(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level, x="Trophic_level", facet_grid = "Species..scientific.name.") +
+  geom_bar(aes(color = Species..scientific.name., fill=Species..scientific.name.), stat="identity", position="stack") +  theme_classic()
+
+
+
+
+NC_Sharks1.ps_trophic_level.pa.ps<-phyloseq::tax_glom(NC_Sharks1.ps, taxrank="Trophic_level", NArm=TRUE)
+
+#Convert to presence absence: (FOO)
+NC_Sharks1.ps_trophic_level.pa.ps_Trophic.level <- phyloseq_standardize_otu_abundance(NC_Sharks1.ps_trophic_level.pa.ps, method = "pa")
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Sharks1.ps_trophic_level.pa.ps_Trophic.level)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Sharks1.ps_trophic_level.pa.ps_Trophic.level)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Species..scientific.name.)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Sharks1.ps_trophic_level.pa.ps_Trophic.level)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+taxa_trophic.level.category_key<-taxa_df%>%
+  select(otu,Trophic_level,family,genus,species)
+
+#(how to I get the taxa table to input the trophic level category )
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(taxa_trophic.level.category_key)
+View(otu_df_long)
+
+# Filter rows where presence equals "1"
+otu_df_long_present <- otu_df_long[otu_df_long$presence == "1", ]
+View(otu_df_long_present)
+
+str(otu_df_long_present)
+
+# If it's a factor or character, convert it to numeric
+otu_df_long_present$Trophic_level <- as.numeric(as.character(otu_df_long_present$Trophic_level))
+
+ggplot(otu_df_long_present, aes(x = Trophic_level, color = Species..scientific.name., fill = Species..scientific.name.)) +
+  geom_density() + 
+  facet_wrap(. ~ Species..scientific.name.) +
+  theme_classic()
+
+ggplot(otu_df_long_present, aes(x = Trophic_level, color = Species..scientific.name., fill = Species..scientific.name.)) +
+  geom_density(alpha = 0.08) +
+  theme_classic()
+
+ggplot(otu_df_long_present, aes(x = Trophic_level, y = Species..scientific.name., color = Species..scientific.name., fill = Species..scientific.name.)) +
+  geom_density_ridges(scale = 10, alpha = 0.1) +
+  theme_classic() +
+  labs(x = "Prey Trophic Level", y = "Shark Species")
+
+ggplot(otu_df_long_present, aes(x = Trophic_level, y = Species..scientific.name., color = Species..scientific.name., fill = Species..scientific.name.)) +
+  geom_density_ridges2(scale = 10, alpha = 0.1, stat="identity", height = 25) +
+  theme_classic() +
+  labs(x = "Prey Trophic Level", y = "Shark Species")
+
+
+# Summarize the counts per trophic level and shark species
+otu_df_long_summary <- otu_df_long_present %>%
+  group_by(Species..scientific.name., Trophic_level) %>%
+  summarise(count = sum(presence)) %>%
+  ungroup()
+
+# Now plot with stat="identity" using geom_density_ridges2
+ggplot(otu_df_long_summary, aes(x = Trophic_level, y = Species..scientific.name., 
+                                height = count, color = Species..scientific.name., fill = Species..scientific.name.)) +
+  geom_density_ridges2(scale = 10, alpha = 0.1, stat = "identity") +
+  theme_classic() +
+  labs(x = "Prey Trophic Level", y = "Shark Species")
+
+
+
+
+
+ggplot(otu_df_long_present, aes(y = Trophic_level, color = Species..scientific.name.)) +
+  geom_boxplot() + 
+  theme_classic()
+```
+
+```{r}
+#Stacked POO Bar Plot - Prey habitat (excludes all NAs, prey gunus and species)
+
+NC_Shark_prey_species_merge_prey.depth.pa.ps<-phyloseq::tax_glom(NC_Sharks1.ps, taxrank="Prey_depth", NArm=TRUE)
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_Prey.depth <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge_prey.depth.pa.ps, method = "pa")
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1.PA_Prey.depth)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA_Prey.depth)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Species..scientific.name.)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA_Prey.depth)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+taxa_prey.depth.category_key<-taxa_df%>%
+  select(otu,Prey_depth,family,genus,species)
+
+#(how do I get the taxa table to input the trophic level category )
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(taxa_prey.depth.category_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_prey.Prey.depth_otu_counts<-otu_df_long%>%
+  group_by(Species..scientific.name.,Prey_depth)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_prey.depth_counts<-merge_prey.Prey.depth_otu_counts%>%
+  group_by(Species..scientific.name.)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_prey.depth_counts)
+
+#plot 
+NC_Shark_prey_species_merge.ps.1.PA_prey.depth_plot <- ggplot(merge_prey.depth_counts,fill="Prey_depth") +
+  geom_bar(aes(x=Species..scientific.name., y=rel_prct, color=Prey_depth, fill=Prey_depth),stat="identity", position="stack")+
+  ylab("Relative Percent of Occurrence") + 
+  xlab("Shark Species") +
+  theme_classic() + theme(text = element_text(size =11)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_discrete(limits = c("benthic", "benthopelagic", "demersal", "pelagic", "pelagic-neritic", "pelagic-oceanic", "reef-associated")) +
+  scale_fill_manual(values = c("benthic"="#756bb1", "benthopelagic"="#2ca25f", "demersal"="#fe9929", "pelagic"="#d7b5d8", "pelagic-neritic"="#fb6a4a", "pelagic-oceanic"="#045a8d", "reef-associated"="#c2e699")) +
+  scale_color_manual(values = c("benthic"="#756bb1", "benthopelagic"="#2ca25f", "demersal"="#fe9929", "pelagic"="#d7b5d8", "pelagic-neritic"="#fb6a4a", "pelagic-oceanic"="#045a8d", "reef-associated"="#c2e699"))
+
+NC_Shark_prey_species_merge.ps.1.PA_prey.depth_plot
+```
+
+```{r}
+#Calculate POO but for all prey species so that I can use the % table - broken down by shark species
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1.PA)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Species..scientific.name.)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+otu_species_key<-taxa_df%>%
+  select(otu,family,genus,species)
+
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(otu_species_key)
+
+####### only prey species ########
+
+#group by different taxonomic levels (shark species)
+
+merge_shark.species_otu_counts<-otu_df_long%>%
+  group_by(Species..scientific.name.,species)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_shark.species_counts<-merge_shark.species_otu_counts%>%
+  group_by(Species..scientific.name.)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_shark.species_counts)
+
+####### prey species and genera ########
+
+#group by different taxonomic levels (shark species)
+
+merge_shark.species.genus_otu_counts<-otu_df_long%>%
+  group_by(Species..scientific.name.,species,genus)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_shark.species.genus_counts<-merge_shark.species_otu_counts%>%
+  group_by(Species..scientific.name.)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_shark.species.genus_counts)
+```
+
+```{r}
+# MDS Plot (prey taxa composition between shark species)
+
+# Removing the NAs (anything that wasn't IDed to genus gets deleted here)
+NC_Shark_prey_genus_merge.ps<-tax_glom(NC_Sharks.ps, taxrank = "genus", NArm = TRUE)
+
+# play with ordinations interactively
+pseq_fecal <- NC_Shark_prey_genus_merge.ps %>%
+  phyloseq_validate()
+
+# MDS Plot (genus) - bray
+pseq_fecal %>%
+  tax_transform(rank = "genus", trans = "compositional") %>%
+  dist_calc(dist = "bray") %>%
+  ord_calc(method = "PCoA") %>% 
+  ord_plot(
+    axes = c(1, 2),
+    colour = "Species..scientific.name.",
+    fill = "Species..scientific.name.",
+    shape = "circle",
+    alpha = 0.5,
+    size = 2
+  ) +
+  ggplot2::stat_ellipse(
+    ggplot2::aes(colour = Species..scientific.name.)
+  ) +
+  theme(
+    panel.grid = element_blank(),
+    panel.grid.major = element_blank())
+```
+
+```{r}
+# Statistics for MDS plot (prey at genus level) - bray
+bray_dist_matrix <- phyloseq::distance(pseq_fecal, method ="bray")
+
+set.seed(200)
+permanova <- vegan::adonis2(bray_dist_matrix ~ phyloseq::sample_data(pseq_fecal)$Species..scientific.name.)
+permanova
+View(permanova)
+
+set.seed(200)
+pairwise.adonis(bray_dist_matrix, phyloseq::sample_data(pseq_fecal)$Species..scientific.name.)
+```
+
+```{r}
+# MDS Plot (prey taxa composition between shark species and sex)
+
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks.ps.AtlanticSharpnose<-subset_samples(NC_Sharks.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+# Removing the NAs (anything that wasn't IDed to genus gets deleted here)
+NC_Shark_prey_genus_merge.ps_AS<-tax_glom(NC_Sharks.ps.AtlanticSharpnose, taxrank = "genus", NArm = TRUE)
+
+# play with ordinations interactively
+pseq_fecal_AS <- NC_Shark_prey_genus_merge.ps_AS %>%
+  phyloseq_validate()
+
+# MDS Plot (genus) - bray
+MDS_AS_Sex <- pseq_fecal_AS %>%
+  tax_transform(rank = "genus", trans = "compositional") %>%
+  dist_calc(dist = "bray") %>%
+  ord_calc(method = "PCoA") %>% 
+  ord_plot(
+    axes = c(1, 2),
+    colour = "Sex..male.female.",
+    fill = "Sex..male.female.",
+    shape = "circle",
+    alpha = 0.5,
+    size = 2
+  ) +
+  ggplot2::stat_ellipse(
+    ggplot2::aes(colour = Sex..male.female.)
+  ) +
+  theme(
+    panel.grid = element_blank(),
+    panel.grid.major = element_blank())
+
+MDS_AS_Sex
+
+# Statistics for MDS plot (prey at genus level) - bray (Atlantic sharpnose)
+bray_dist_matrix_AS <- phyloseq::distance(pseq_fecal_AS, method ="bray")
+
+set.seed(200)
+permanova_AS.sex <- vegan::adonis2(bray_dist_matrix_AS ~ phyloseq::sample_data(pseq_fecal_AS)$Sex..male.female.)
+permanova_AS.sex
+View(permanova_AS.sex)
+
+######################################################################################################################
+
+#Now only by shark species (Blacknose)
+NC_Sharks.ps.Blacknose<-subset_samples(NC_Sharks.ps,Species..scientific.name.=="Carcharhinus acronotus")
+
+# Removing the NAs (anything that wasn't IDed to genus gets deleted here)
+NC_Shark_prey_genus_merge.ps_BN<-tax_glom(NC_Sharks.ps.Blacknose, taxrank = "genus", NArm = TRUE)
+
+# play with ordinations interactively
+pseq_fecal_BN <- NC_Shark_prey_genus_merge.ps_BN %>%
+  phyloseq_validate()
+
+# MDS Plot (genus) - bray
+MDS_BN_Sex<- pseq_fecal_BN %>%
+  tax_transform(rank = "genus", trans = "compositional") %>%
+  dist_calc(dist = "bray") %>%
+  ord_calc(method = "PCoA") %>% 
+  ord_plot(
+    axes = c(1, 2),
+    colour = "Sex..male.female.",
+    fill = "Sex..male.female.",
+    shape = "circle",
+    alpha = 0.5,
+    size = 2
+  ) +
+  ggplot2::stat_ellipse(
+    ggplot2::aes(colour = Sex..male.female.)
+  ) +
+  theme(
+    panel.grid = element_blank(),
+    panel.grid.major = element_blank())
+
+MDS_BN_Sex
+
+# Statistics for MDS plot (prey at genus level) - bray (Atlantic sharpnose)
+bray_dist_matrix_BN <- phyloseq::distance(pseq_fecal_BN, method ="bray")
+
+set.seed(200)
+permanova_BN.sex <- vegan::adonis2(bray_dist_matrix_BN ~ phyloseq::sample_data(pseq_fecal_BN)$Sex..male.female.)
+permanova_BN.sex
+View(permanova_BN.sex)
+
+######################################################################################################################
+
+#Plot all together
+library(gridExtra)
+grid.arrange(MDS_BN_Sex, MDS_AS_Sex, ncol=2)
+```
+
+```{r}
+#Rarefaction curves (includes genus and species)
+
+### Bonnethead ###
+Rarefaction_Bonnethead <- read.csv("Rarefaction_bonnethead.csv")
+#View(Rarefaction_Bonnethead)
+
+#Switch axis
+Rarefaction_Bonnethead_Reverse <- data.frame(t(Rarefaction_Bonnethead[-1]))
+colnames(Rarefaction_Bonnethead_Reverse) <- Rarefaction_Bonnethead[, 1]
+#View(Rarefaction_Bonnethead_Reverse)
+
+sample_data(Rarefaction_Bonnethead_Reverse)
+summary(Rarefaction_Bonnethead_Reverse)
+attach(Rarefaction_Bonnethead_Reverse)
+names(Rarefaction_Bonnethead_Reverse)
+
+#ci=2 means that the CI is 95%
+sp_Bonnethead <- specaccum(Rarefaction_Bonnethead_Reverse, object="prey taxa", permutations = 100, ci=2)
+#View(sp_Bonnethead)
+
+plot(sp_Bonnethead, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 18), ylim=c(1, 18)) 
+
+
+### Atlantic sharpnose ###
+Rarefaction_AtlanticSharpnose <- read.csv("Rarefaction_atlanticsharpnose.csv")
+#View(Rarefaction_AtlanticSharpnose)
+
+#Switch axis
+Rarefaction_AtlanticSharpnose_Reverse <- data.frame(t(Rarefaction_AtlanticSharpnose[-1]))
+colnames(Rarefaction_AtlanticSharpnose_Reverse) <- Rarefaction_AtlanticSharpnose[, 1]
+#View(Rarefaction_AtlanticSharpnose_Reverse)
+
+sample_data(Rarefaction_AtlanticSharpnose_Reverse)
+summary(Rarefaction_AtlanticSharpnose_Reverse)
+attach(Rarefaction_AtlanticSharpnose_Reverse)
+names(Rarefaction_AtlanticSharpnose_Reverse)
+
+#ci=2 means that the CI is 95%
+sp_AtlanticSharpnose <- specaccum(Rarefaction_AtlanticSharpnose_Reverse, object="prey taxa", permutations = 100, ci=2)
+#View(sp_AtlanticSharpnose)
+
+plot(sp_AtlanticSharpnose, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 27), ylim=c(1, 25)) 
+
+
+
+### Blacktip ###
+Rarefaction_Blacktip <- read.csv("Rarefaction_blacktip.csv")
+#View(Rarefaction_Blacktip)
+
+#Switch axis
+Rarefaction_Blacktip_Reverse <- data.frame(t(Rarefaction_Blacktip[-1]))
+colnames(Rarefaction_Blacktip_Reverse) <- Rarefaction_Blacktip[, 1]
+#View(Rarefaction_Blacktip_Reverse)
+
+sample_data(Rarefaction_Blacktip_Reverse)
+summary(Rarefaction_Blacktip_Reverse)
+attach(Rarefaction_Blacktip_Reverse)
+names(Rarefaction_Blacktip_Reverse)
+
+#ci=2 means that the CI is 95%
+sp_Blacktip <- specaccum(Rarefaction_Blacktip_Reverse, object="prey taxa", permutations = 100, ci=2)
+#View(sp_Blacktip)
+
+plot(sp_Blacktip, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 7), ylim=c(1, 16)) 
+
+
+### Blacknose ###
+Rarefaction_Blacknose <- read.csv("Rarefaction_blacknose.csv")
+#View(Rarefaction_Blacknose)
+
+#Switch axis
+Rarefaction_Blacknose <- data.frame(t(Rarefaction_Blacknose[-1]))
+colnames(Rarefaction_Blacknose) <- Rarefaction_Blacknose[, 1]
+#View(Rarefaction_Blacknose)
+
+sample_data(Rarefaction_Blacknose)
+summary(Rarefaction_Blacknose)
+attach(Rarefaction_Blacknose)
+names(Rarefaction_Blacknose)
+
+#ci=2 means that the CI is 95%
+Rarefaction_Blacknose <- specaccum(Rarefaction_Blacknose, object="prey taxa", permutations = 100, ci=2)
+#View(Rarefaction_Blacknose)
+
+plot(Rarefaction_Blacknose, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 35), ylim=c(1, 33))
+
+
+############################All rarefaction curves finished###############################
+
+#Combine all figures into grid
+#Need to highlight both lines and run them together with command return
+layout(matrix(c(1, 2, 3, 4), nrow = 2,
+              ncol = 2, byrow = TRUE))
+plot(sp_Bonnethead, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 18), ylim=c(1, 18)) 
+plot(sp_AtlanticSharpnose, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 27), ylim=c(1, 25)) 
+plot(sp_Blacktip, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 7), ylim=c(1, 16)) 
+plot(Rarefaction_Blacknose, ylab="Number of Prey Taxa", xlab="Number of samples",col="blue",ci.type="poly", ci.col="lightblue", ci.lty = 0,
+     xlim=c(1, 35), ylim=c(1, 33))
+```
+
+```{r}
+#Calculate Shannon's diversity index - Shark species
+
+#Merge the data by shark species - prey at the species level
+NC_Shark_prey_species_merge.ps_shark.species<-merge_samples(NC_Shark_prey_species_merge.ps, group = "Species..scientific.name.") 
+
+Shannon.diversity_species <- estimate_richness(NC_Shark_prey_species_merge.ps_shark.species, split = TRUE, measures=c("Observed", "Shannon", "Simpson"))
+
+View(Shannon.diversity_species)
+
+#Merge the data by shark species - prey at the genus level
+NC_Shark_prey_species_merge.ps_shark.genus<-merge_samples(NC_Shark_prey_genus_merge.ps, group = "Species..scientific.name.") 
+
+Shannon.diversity_genus <- estimate_richness(NC_Shark_prey_species_merge.ps_shark.genus, split = TRUE, measures=c("Observed", "Shannon", "Simpson"))
+
+View(Shannon.diversity_genus)
+```
+
+```{r}
+#Calculate Levin's niche width and Levin's niche overlap - Shark species (prey at species level)
+
+#Switch axis
+NC_Shark_prey_species_merge.ps_shark.species_Reverse <- data.frame(t(otu_table(NC_Shark_prey_species_merge.ps_shark.species, taxa_are_rows = TRUE)[-10]))
+#View(NC_Shark_prey_species_merge.ps_shark.species_Reverse)
+
+levins.niche.width_species <- niche.width(NC_Shark_prey_species_merge.ps_shark.species_Reverse, method = "levins")
+View(levins.niche.width_species)
+
+#Calculate Levin's niche overlap
+levins.niche.overlap_species <- niche.overlap(NC_Shark_prey_species_merge.ps_shark.species_Reverse, method = "levins")
+View(levins.niche.overlap_species)
+
+
+
+#Calculate Levin's niche width and Levin's niche overlap - Shark species (prey at genus level)
+
+#Switch axis
+NC_Shark_prey_species_merge.ps_shark.genus_Reverse <- data.frame(t(otu_table(NC_Shark_prey_species_merge.ps_shark.genus, taxa_are_rows = TRUE)[-10]))
+#View(NC_Shark_prey_species_merge.ps_shark.genus_Reverse)
+
+levins.niche.width_genus <- niche.width(NC_Shark_prey_species_merge.ps_shark.genus_Reverse, method = "levins")
+View(levins.niche.width_genus)
+
+#Calculate Levin's niche overlap
+levins.niche.overlap_genus <- niche.overlap(NC_Shark_prey_species_merge.ps_shark.genus_Reverse, method = "levins")
+View(levins.niche.overlap_genus)
+```
+
+```{r}
+#Calculate trophic level of shark species
+
+#Following tutorial from https://cran.r-project.org/web/packages/dietr/vignettes/dietr-vignette.pdf
+
+
+#calculate percent of each sample
+#NC_Shark_prey_species_merge.ps_shark.species_percent <- transform_sample_counts(NC_Shark_prey_species_merge.ps_shark.species, function(OTU) OTU/sum(OTU))
+
+#View(NC_Shark_prey_species_merge.ps_shark.species_percent)
+
+#(I changed this from row.names = 1 to NULL so that the first column wouldn't be a header - make sure this didn't mess anything else up I did this for the trophic level calculations)
+editedtaxa.df.null <- read.csv("/Users/savannahryburn/Desktop/Chapter2/GitHub_NC_shark_diet/GitHub_NC_shark_diet/editedtaxafile.csv", header = FALSE, row.names = NULL)
+
+names(editedtaxa.df.null) <- lapply(editedtaxa.df.null[1, ], as.character)
+editedtaxa.df.null <- editedtaxa.df.null[-1,] 
+View(editedtaxa.df.null)
+
+
+NC_Shark_prey_species_merge.ps_percent <- transform_sample_counts(NC_Shark_prey_species_merge.ps, function(OTU) OTU/sum(OTU))
+View(NC_Shark_prey_species_merge.ps_percent)
+
+species_diet_percent_melt <- psmelt(NC_Shark_prey_species_merge.ps_percent)
+View(species_diet_percent_melt)
+
+library(dplyr)
+
+HM.mat_shark <- species_diet_percent_melt %>% 
+  dplyr::select(c(Sample,OTU,Abundance))
+View(HM.mat_shark)
+
+HM.mat_shark <- HM.mat_shark %>% 
+  rename(Percent=Abundance)
+
+#Remove prey that do not contribute to diets
+HM.mat_shark<-HM.mat_shark[!HM.mat_shark$Percent==0,]
+View(HM.mat_shark)
+
+#Create a empty data frame for prey values
+PreyMat_Shark<-as.data.frame(matrix(ncol = 3,nrow = 224))
+#Name the columns something useful
+colnames(PreyMat_Shark)<-c("OTU","TL","SE")
+View(PreyMat_Shark)
+#load editedtaxafile here because it has the trophic levels matched to the ASV names
+
+#Add in the prey name to the PreyMat -- PreyMat[,1]<-unique(FoodTypes)
+PreyMat_Shark[,1]<-unique(editedtaxa.df.null$ASV)
+View(PreyMat_Shark)
+#Add in the trophic levels of the prey -- PreyMat[,2]<-c(2.37,2.2,3.5,2.1,2,2) 
+PreyMat_Shark[,2]<-as.numeric(editedtaxa.df.null$Trophic_level) 
+View(PreyMat_Shark)
+#Add in the SE of the prey 
+PreyMat_Shark[,3]<-as.numeric(editedtaxa.df.null$Trophic_level_SE)
+View(PreyMat_Shark)
+
+HMtax_shark <- species_diet_percent_melt
+HMtax_shark <- species_diet_percent_melt %>% 
+  dplyr::select(c(Sample,Species..scientific.name.,Shark_Environment, Sex..male.female.)) %>% 
+  dplyr::mutate(species.environment = paste(Species..scientific.name.,Shark_Environment))
+View(HMtax_shark)
+
+#Calculate the trophic level of the different shark species - why is this not working now??
+HM.TL_shark<-DietTroph(DietItems = HM.mat_shark, PreyValues = PreyMat_Shark, PreyClass = "OTU",
+  Taxonomy = HMtax_shark, SumCheck = TRUE)
+View(HM.TL_shark)
+```
+
+```{r}
+#Comparing juvenile and adult Atlantic Sharpnose
+
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks.ps.AtlanticSharpnose<-subset_samples(NC_Shark_prey_species_merge1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+plot_richness(NC_Sharks.ps.AtlanticSharpnose, x="Stretched.Total.Length..STL..mm..", measures=c("Observed"))
+
+View(NC_Sharks.ps.AtlanticSharpnose)
+
+#POO Plot
+
+#All prey
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_AS <- phyloseq_standardize_otu_abundance(NC_Sharks.ps.AtlanticSharpnose, method = "pa")
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA_AS)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.age.AS_key<-sample_df%>%
+  select(sample,Age)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA_AS)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+otu_species_key<-taxa_df%>%
+  select(otu,family,genus,species)
+
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.age.AS_key)%>%
+  left_join(otu_species_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_shark.age.AS_otu_counts<-otu_df_long%>%
+  group_by(Age,species,genus)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_shark.age.AS_counts<-merge_shark.age.AS_otu_counts%>%
+  group_by(Age)%>%
+  mutate(total_shark.age.AS=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.age.AS)*100)
+
+View(merge_shark.age.AS_counts)
+
+merge_shark.age.AS_counts <- merge_shark.age.AS_counts %>%
+  mutate(genus_species = paste(genus, species, sep = " "))  # Concatenate genus & species
+
+shark_age_AS_plot <- ggplot(merge_shark.age.AS_counts) +
+  geom_bar(aes(x = Age, y = rel_prct, fill = genus_species),  # Use concatenated genus & species
+           stat = "identity", position = "stack") +
+  ylab("Relative Percent of Occurrence") + 
+  xlab("Atlantic Sharpnose Age") +
+  theme_classic() +
+  theme(text = element_text(size = 11)) +
+  scale_fill_viridis_d(option = "plasma")  # Optional: Better color scale for clarity
+
+print(shark_age_AS_plot)
+
+
+##20 most common prey
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_AS <- phyloseq_standardize_otu_abundance(NC_Sharks.ps.AtlanticSharpnose, method = "pa")
+
+#Top 20
+top20occ = names(sort(taxa_sums(NC_Shark_prey_species_merge.ps.1.PA_AS), decreasing = TRUE)[1:20])
+NC_Shark_prey_species_merge.ps.1.PA_AS.Top20 = prune_taxa(top20occ, NC_Shark_prey_species_merge.ps.1.PA_AS)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA_AS.Top20)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.age.AS_key<-sample_df%>%
+  select(sample,Age)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA_AS.Top20)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+otu_species_key<-taxa_df%>%
+  select(otu,family,genus,species)
+
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.age.AS_key)%>%
+  left_join(otu_species_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_shark.age.AS_otu_counts<-otu_df_long%>%
+  group_by(Age,species)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_shark.age.AS_counts<-merge_shark.age.AS_otu_counts%>%
+  group_by(Age)%>%
+  mutate(total_shark.age.AS=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.age.AS)*100)
+
+View(merge_shark.age.AS_counts)
+
+#plot 
+NC_Shark_prey_species_merge.ps.1.PA.Top20._shark_age_AS_plot <- ggplot(merge_shark.age.AS_counts,fill="species") +
+  geom_bar(aes(x=Age, y=rel_prct, color=species, fill=species),stat="identity", position="stack")+
+  ylab("Relative Percent of Occurrence") + 
+  xlab("Atlantic Sharpnose Age") +
+  theme_classic() + theme(text = element_text(size =11)) +
+  scale_fill_discrete(limits = c("Achelous gibbesii", "Anchoa hepsetus", "Arenaeus cribrarius", "Callinectes sapidus", "Callinectes similis", "Cynoscion nothus", "Etropus crossotus", "Lagodon rhomboides", "Larimus fasciatus", "Leiostomus xanthurus", "Myrophis punctatus", "Ophichthus gomesii","Orthopristis chrysoptera", "Penaeus setiferus", "Prionotus longispinosus", "Sphyrna tiburo", "Squilla empusa", "Symphurus plagiusa", "Syngnathus louisianae", "Synodus foetens")) +
+      scale_fill_manual(values = c("Achelous gibbesii"="orange", "Anchoa hepsetus"="darkolivegreen1", "Arenaeus cribrarius"="darksalmon", "Callinectes sapidus"="goldenrod3", "Callinectes similis"="tomato", "Cynoscion nothus"="aquamarine4", "Etropus crossotus"="lightblue", "Lagodon rhomboides"="lightseagreen", "Larimus fasciatus"="slateblue1", "Leiostomus xanthurus"="palegreen", "Myrophis punctatus"="royalblue", "Ophichthus gomesii"="darkgreen","Orthopristis chrysoptera"="green3", "Penaeus setiferus"="red", "Prionotus longispinosus"="slategray2", "Sphyrna tiburo"="yellowgreen", "Squilla empusa"="hotpink1", "Symphurus plagiusa"="purple", "Syngnathus louisianae"="blue", "Synodus foetens"="navyblue")) +
+      scale_color_manual(values = c("Achelous gibbesii"="orange", "Anchoa hepsetus"="darkolivegreen1", "Arenaeus cribrarius"="darksalmon", "Callinectes sapidus"="goldenrod3", "Callinectes similis"="tomato", "Cynoscion nothus"="aquamarine4", "Etropus crossotus"="lightblue", "Lagodon rhomboides"="lightseagreen", "Larimus fasciatus"="slateblue1", "Leiostomus xanthurus"="palegreen", "Myrophis punctatus"="royalblue", "Ophichthus gomesii"="darkgreen","Orthopristis chrysoptera"="green3", "Penaeus setiferus"="red", "Prionotus longispinosus"="slategray2", "Sphyrna tiburo"="yellowgreen", "Squilla empusa"="hotpink1", "Symphurus plagiusa"="purple", "Syngnathus louisianae"="blue", "Synodus foetens"="navyblue"))
+
+NC_Shark_prey_species_merge.ps.1.PA.Top20._shark_age_AS_plot
+
+
+
+
+
+# MDS Plot (prey taxa composition between Atlantic sharpnose and age)
+
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks.ps.AtlanticSharpnose<-subset_samples(NC_Shark_prey_species_merge1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+# Removing the NAs (anything that wasn't IDed to genus gets deleted here)
+NC_Shark_prey_genus_merge.ps_AS<-tax_glom(NC_Sharks.ps.AtlanticSharpnose, taxrank = "genus", NArm = TRUE)
+
+# play with ordinations interactively
+pseq_fecal_AS <- NC_Shark_prey_genus_merge.ps_AS %>%
+  phyloseq_validate()
+
+# MDS Plot (genus) - bray
+pseq_fecal_AS %>%
+  tax_transform(rank = "genus", trans = "compositional") %>%
+  dist_calc(dist = "jsd") %>%
+  ord_calc(method = "PCoA") %>% 
+  ord_plot(
+    axes = c(1, 2),
+    colour = "Age",
+    fill = "Age",
+    shape = "circle",
+    alpha = 0.5,
+    size = 2
+  ) +
+  ggplot2::stat_ellipse(
+    ggplot2::aes(colour = Age)
+  ) +
+  theme(
+    panel.grid = element_blank(),
+    panel.grid.major = element_blank()) + 
+  scale_fill_manual(values = c("A"="orange", 
+                               "J"="yellowgreen")) + 
+  scale_color_manual(values = c("A"="orange", 
+                               "J"="yellowgreen"))
+
+# Statistics for MDS plot (prey at genus level) - bray (Atlantic sharpnose)
+jsd_dist_matrix_AS <- phyloseq::distance(pseq_fecal_AS, method ="jsd")
+
+set.seed(200)
+permanova_AS.age <- vegan::adonis2(jsd_dist_matrix_AS ~ phyloseq::sample_data(pseq_fecal_AS)$Age)
+permanova_AS.age
+View(permanova_AS.age)
+
+
+
+
+#Stacked POO Bar Plot - Prey trophic level (excludes all NAs, prey genus and species) - comparing AS age
+##Is this including both species and guenus of prey?
+
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks1.ps.AtlanticSharpnose<-subset_samples(NC_Sharks1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+NC_Shark_prey_species_merge_trophic_levels.pa.ps<-phyloseq::tax_glom(NC_Sharks1.ps.AtlanticSharpnose, taxrank="Trophic_level_rank", NArm=TRUE)
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_Trophic.level <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge_trophic_levels.pa.ps, method = "pa")
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Age)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+taxa_trophic.level.category_key<-taxa_df%>%
+  select(otu,Trophic_level_rank,family,genus,species)
+
+#(how to I get the taxa table to input the trophic level category )
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(taxa_trophic.level.category_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_prey.trophic.level_otu_counts<-otu_df_long%>%
+  group_by(Age,Trophic_level_rank)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_prey.trophic.level_counts<-merge_prey.trophic.level_otu_counts%>%
+  group_by(Age)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_prey.trophic.level_counts)
+
+merge_prey.trophic.level_counts$Trophic_level_rank <- factor(merge_prey.trophic.level_counts$Trophic_level_rank, 
+    levels = c("Carnivore (4.1-4.5)", 
+               "Carnivore (3.6-4.0)", 
+               "Carnivore (3.1-3.5)", 
+               "Planktivore (2.6-3.0)", 
+               "Planktivore (2.0-2.5)"))
+
+#Plot
+NC_Shark_prey_species_merge.ps.1.PA_prey.trophic.level_plot <- ggplot(merge_prey.trophic.level_counts) + 
+  geom_bar(aes(x=Age, y=rel_prct, color=Trophic_level_rank, fill=Trophic_level_rank), stat="identity", position="stack") +
+  ylab("Relative Percent of Occurrence") + 
+  xlab("Atlantic Sharpnose Age") +
+  theme_classic() + 
+  theme(text = element_text(size = 11)) + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  scale_fill_manual(values = c("Carnivore (4.1-4.5)"="darkgreen", 
+                               "Carnivore (3.6-4.0)"="yellowgreen", 
+                               "Carnivore (3.1-3.5)"="lightblue", 
+                               "Planktivore (2.6-3.0)"="tomato", 
+                               "Planktivore (2.0-2.5)"="orange")) + 
+  scale_color_manual(values = c("Carnivore (4.1-4.5)"="darkgreen", 
+                               "Carnivore (3.6-4.0)"="yellowgreen", 
+                               "Carnivore (3.1-3.5)"="lightblue", 
+                               "Planktivore (2.6-3.0)"="tomato", 
+                               "Planktivore (2.0-2.5)"="orange"))
+
+NC_Shark_prey_species_merge.ps.1.PA_prey.trophic.level_plot
+
+
+
+# Try to make a histogram whit no trophic categories
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks1.ps.AtlanticSharpnose<-subset_samples(NC_Sharks1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+NC_Shark_prey_species_merge_trophic_levels.pa.ps_AS<-phyloseq::tax_glom(NC_Sharks1.ps.AtlanticSharpnose, taxrank="Trophic_level", NArm=TRUE)
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_Trophic.level_AS <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge_trophic_levels.pa.ps_AS, method = "pa")
+
+
+plot_bar(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level_AS, x="Trophic_level", fill = "species", facet_grid = "Age") +
+  geom_bar(aes(color=species, fill=species), stat="identity", position="stack")
+
+plot_bar(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level_AS, x="Trophic_level", facet_grid = "Age") +
+  geom_bar(aes(color = Age, fill = Age), stat="identity", position="stack") +  theme_classic() + scale_fill_manual(values = c("A"="orange", 
+                               "J"="yellowgreen")) + 
+  scale_color_manual(values = c("A"="orange", 
+                               "J"="yellowgreen"))
+
+
+
+
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks1.ps.AtlanticSharpnose<-subset_samples(NC_Sharks1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+NC_Shark_prey_species_merge_trophic_level_prey.pa.ps_AS<-phyloseq::tax_glom(NC_Sharks1.ps.AtlanticSharpnose, taxrank="Trophic_level", NArm=TRUE)
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_Trophic.level.prey_AS <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge_trophic_level_prey.pa.ps_AS, method = "pa")
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level.prey_AS)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level.prey_AS)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Age)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA_Trophic.level.prey_AS)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+taxa_trophic.level.category_key<-taxa_df%>%
+  select(otu,Trophic_level,family,genus,species)
+
+#(how to I get the taxa table to input the trophic level category )
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(taxa_trophic.level.category_key)
+
+View(otu_df_long)
+
+# Filter rows where presence equals "1"
+otu_df_long_present <- otu_df_long[otu_df_long$presence == "1", ]
+View(otu_df_long_present)
+##This is better but now its not showing how many times that ASV was present within a single sample
+
+str(otu_df_long_present)
+
+# If it's a factor or character, convert it to numeric
+otu_df_long_present$Trophic_level <- as.numeric(as.character(otu_df_long_present$Trophic_level))
+
+ggplot(otu_df_long_present, aes(x = Trophic_level, color = Age, fill = Age)) +
+  geom_density(alpha = 0.08) +
+  theme_classic() +
+  scale_fill_manual(values = c("A"="orange", 
+                               "J"="yellowgreen")) + 
+  scale_color_manual(values = c("A"="orange", 
+                               "J"="yellowgreen"))
+
+
+ggplot(otu_df_long_present, aes(y = Trophic_level, color = Age)) +
+  geom_boxplot() + 
+  theme_classic()
+
+
+ggplot(otu_df_long_present, aes(x = Trophic_level, y = Age, color = Age, fill = Age)) +
+  geom_density_ridges(scale = 10, alpha = 0.1) +
+  theme_classic() +
+  labs(x = "Prey Trophic Level", y = "Atlantic Sharpnose Age") +
+  scale_fill_manual(values = c("A"="orange", 
+                               "J"="yellowgreen")) + 
+  scale_color_manual(values = c("A"="orange", 
+                               "J"="yellowgreen"))
+
+
+
+
+
+
+#Stacked POO Bar Plot - Prey habitat (excludes all NAs, prey gunus and species)
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks1.ps.AtlanticSharpnose<-subset_samples(NC_Sharks1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+NC_Shark_prey_species_merge_prey.depth.pa_AS.ps<-phyloseq::tax_glom(NC_Sharks1.ps.AtlanticSharpnose, taxrank="Prey_depth", NArm=TRUE)
+
+
+#Convert to presence absence: (FOO)
+NC_Shark_prey_species_merge.ps.1.PA_AS_Prey.depth <- phyloseq_standardize_otu_abundance(NC_Shark_prey_species_merge_prey.depth.pa_AS.ps, method = "pa")
+
+#Put it into dataframes
+otu_df<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1.PA_AS_Prey.depth)))
+otu_df$otu<-rownames(otu_df)
+
+otu_df_long<-otu_df%>%
+  pivot_longer(cols = -otu,names_to = "sample",values_to = "presence")
+
+otu_df_long$sample <-gsub(pattern = ".",
+                          "-",
+                          x=otu_df_long$sample,
+                          fixed = TRUE)
+
+sample_df<-cbind(data.frame(sample_data(NC_Shark_prey_species_merge.ps.1.PA_AS_Prey.depth)))
+sample_df<-rownames_to_column(sample_df, var = "sample")
+sample_shark.species_key<-sample_df%>%
+  select(sample,Age)
+
+taxa_df<-cbind(data.frame(tax_table(NC_Shark_prey_species_merge.ps.1.PA_AS_Prey.depth)))
+taxa_df<-rownames_to_column(taxa_df,var="otu")
+taxa_prey.depth.category_key<-taxa_df%>%
+  select(otu,Prey_depth,family,genus,species)
+
+#(how do I get the taxa table to input the trophic level category )
+otu_df_long<-otu_df_long%>%
+  left_join(sample_shark.species_key)%>%
+  left_join(taxa_prey.depth.category_key)
+
+#group by different taxonomic levels (shark species)
+
+merge_prey.Prey.depth_otu_counts<-otu_df_long%>%
+  group_by(Age,Prey_depth)%>%
+  summarise(total_count=sum(presence))%>%
+  ungroup()
+
+merge_prey.depth_counts<-merge_prey.Prey.depth_otu_counts%>%
+  group_by(Age)%>%
+  mutate(total_shark.species=sum(total_count))%>%
+  ungroup()%>%
+  mutate(rel_prct=(total_count/total_shark.species)*100)
+
+View(merge_prey.depth_counts)
+
+#plot 
+NC_Shark_prey_species_merge.ps.1.PA_prey.depth_plot <- ggplot(merge_prey.depth_counts,fill="Prey_depth") +
+  geom_bar(aes(x=Age, y=rel_prct, color=Prey_depth, fill=Prey_depth),stat="identity", position="stack")+
+  ylab("Relative Percent of Occurrence") + 
+  xlab("Shark Species") +
+  theme_classic() + theme(text = element_text(size =11)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_discrete(limits = c("benthic", "benthopelagic", "demersal", "pelagic", "pelagic-neritic", "pelagic-oceanic", "reef-associated")) +
+  scale_fill_manual(values = c("benthic"="#756bb1", "benthopelagic"="#2ca25f", "demersal"="#fe9929", "pelagic"="#d7b5d8", "pelagic-neritic"="#fb6a4a", "pelagic-oceanic"="#045a8d", "reef-associated"="#c2e699")) +
+  scale_color_manual(values = c("benthic"="#756bb1", "benthopelagic"="#2ca25f", "demersal"="#fe9929", "pelagic"="#d7b5d8", "pelagic-neritic"="#fb6a4a", "pelagic-oceanic"="#045a8d", "reef-associated"="#c2e699"))
+
+NC_Shark_prey_species_merge.ps.1.PA_prey.depth_plot
+
+
+
+
+#Calculate Levin's niche width and Levin's niche overlap - Shark species (prey at genus level) - Atlantic sharpnose age
+
+#Now only by shark species (Atlantic sharpnose)
+NC_Shark_prey_genus_merge.ps.AtlanticSharpnose<-subset_samples(NC_Sharks1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+#Merge the data by shark species - prey at the genus level
+NC_Shark_prey_species_merge.ps_shark.genus_AS<-merge_samples(NC_Shark_prey_genus_merge.ps.AtlanticSharpnose, group = "Age") 
+
+Shannon.diversity_genus_AS.Age <- estimate_richness(NC_Shark_prey_species_merge.ps_shark.genus_AS, split = TRUE, measures=c("Observed", "Shannon", "Simpson"))
+
+View(Shannon.diversity_genus_AS.Age)
+
+#Switch axis
+NC_Shark_prey_species_merge.ps_shark.genus_AS_Reverse <- data.frame(t(otu_table(NC_Shark_prey_species_merge.ps_shark.genus_AS, taxa_are_rows = TRUE)[-10]))
+#View(NC_Shark_prey_species_merge.ps_shark.genus_AS_Reverse)
+
+levins.niche.width_genus_AS <- niche.width(NC_Shark_prey_species_merge.ps_shark.genus_AS_Reverse, method = "levins")
+View(levins.niche.width_genus_AS)
+
+#Calculate Levin's niche overlap
+levins.niche.overlap_genus_AS <- niche.overlap(NC_Shark_prey_species_merge.ps_shark.genus_AS_Reverse, method = "levins")
+View(levins.niche.overlap_genus_AS)
+
+
+
+
+#Trophic levels
+
+#(I changed this from row.names = 1 to NULL so that the first column wouldn't be a header - make sure this didn't mess anything else up I did this for the trophic level calculations)
+editedtaxa.df.null <- read.csv("../Chapter2/editedtaxafile.csv", header = FALSE, row.names = NULL)
+
+names(editedtaxa.df.null) <- lapply(editedtaxa.df.null[1, ], as.character)
+editedtaxa.df.null <- editedtaxa.df.null[-1,] 
+#View(editedtaxa.df.null)
+
+#Now only by shark species (Atlantic sharpnose)
+NC_Sharks1.ps.AtlanticSharpnose<-subset_samples(NC_Shark_prey_species_merge1.ps,Species..scientific.name.=="Rhizoprionodon terraenovae")
+
+NC_Sharks1.ps.AS_percent <- transform_sample_counts(NC_Sharks1.ps.AtlanticSharpnose, function(OTU) OTU/sum(OTU))
+#View(NC_Sharks1.ps.AS_percent)
+
+species_diet_AS_percent_melt <- psmelt(NC_Sharks1.ps.AS_percent)
+#View(species_diet_AS_percent_melt)
+
+library(dplyr)
+
+HM.mat_shark_AS <- species_diet_AS_percent_melt %>% 
+  dplyr::select(c(Sample,OTU,Abundance))
+#View(HM.mat_shark_AS)
+
+HM.mat_shark_AS <- HM.mat_shark_AS %>% 
+  rename(Percent=Abundance)
+
+#Remove prey that do not contribute to diets
+HM.mat_shark_AS<-HM.mat_shark_AS[!HM.mat_shark_AS$Percent==0,]
+#View(HM.mat_shark_AS)
+
+#Create a empty data frame for prey values
+PreyMat_Shark_AS<-as.data.frame(matrix(ncol = 3,nrow = 224))
+#Name the columns something useful
+colnames(PreyMat_Shark_AS)<-c("OTU","TL","SE")
+#View(PreyMat_Shark_AS)
+#load editedtaxafile here because it has the trophic levels matched to the ASV names
+
+#Add in the prey name to the PreyMat -- PreyMat[,1]<-unique(FoodTypes)
+PreyMat_Shark_AS[,1]<-unique(editedtaxa.df.null$ASV)
+#View(PreyMat_Shark_AS)
+#Add in the trophic levels of the prey -- PreyMat[,2]<-c(2.37,2.2,3.5,2.1,2,2) 
+PreyMat_Shark_AS[,2]<-as.numeric(editedtaxa.df.null$Trophic_level) 
+#View(PreyMat_Shark_AS)
+#Add in the SE of the prey 
+PreyMat_Shark_AS[,3]<-as.numeric(editedtaxa.df.null$Trophic_level_SE)
+#View(PreyMat_Shark_AS)
+
+HMtax_shark_AS <- species_diet_AS_percent_melt
+HMtax_shark_AS <- species_diet_AS_percent_melt %>% 
+  dplyr::select(c(Sample,Age))
+#View(HMtax_shark_AS)
+
+#Calculate the trophic level of the different shark species - why is this not working now??
+HM.TL_shark_AS<-DietTroph(DietItems = HM.mat_shark_AS, PreyValues = PreyMat_Shark_AS, PreyClass = "OTU",
+  Taxonomy = HMtax_shark_AS, SumCheck = TRUE)
+View(HM.TL_shark_AS)
+```
+
+# Simplified individual specialization code with stDNA and fDNA
+```{r}
+library(phyloseq)
+library(vegan)
+library(dplyr)
+library(tibble)
+
+#Load phyloseq object of just fecal swabs made in 05 script:
+NC_Sharks_withswabs.ps<-readRDS(file = "../Chapter2/Paired_NC_Sharks.ps")
+
+NC_Sharks_withswabs.ps
+
+# Function to calculate WIC, BIC, TNW
+calc_specialization <- function(ps_obj, species_name) {
+  # Calculate Bray-Curtis distances
+  dist_bc <- phyloseq::distance(ps_obj, method = "bray")
+  
+  # Get individual IDs
+  individuals <- sample_data(ps_obj)$sample_id
+  
+  # WIC: within-individual dispersion
+  disp_within <- betadisper(dist_bc, individuals)
+  WIC <- mean(disp_within$distances^2)
+  
+  # TNW: total dispersion (global centroid)
+  global_group <- rep("all", length(individuals))
+  disp_total <- betadisper(dist_bc, global_group)
+  TNW <- mean(disp_total$distances^2)
+  
+  # BIC: among-individual dispersion
+  BIC <- TNW - WIC
+  
+  tibble(
+    Species = species_name,
+    WIC = WIC,
+    BIC = BIC,
+    TNW = TNW,
+    WIC_TNW_ratio = WIC / TNW,
+    BIC_TNW_ratio = BIC / TNW
+  )
+}
+
+# Loop over species and calculate specialization metrics
+results <- list()
+
+for (sp in unique(sample_data(NC_Sharks_withswabs.ps)$Species..scientific.name.)) {
+  ps_sp <- subset_samples(NC_Sharks_withswabs.ps, Species..scientific.name. == sp)
+  results[[sp]] <- calc_specialization(ps_sp, sp)
+}
+
+# Combine results into one data frame
+specialization_results <- bind_rows(results)
+
+# View results
+specialization_results
+
+
+### Now make figures
+library(tidyverse)
+library(patchwork)
+
+df <- tribble(
+  ~Species, ~WIC, ~BIC, ~TNW, ~WIC_TNW_ratio, ~BIC_TNW_ratio,
+  "Sphyrna tiburo", 0.1030999, 0.1436818, 0.2467817, 0.4177776, 0.5822224,
+  "Rhizoprionodon terraenovae", 0.1921688, 0.2325955, 0.4247643, 0.4524128, 0.5475872,
+  "Carcharhinus limbatus", 0.1185959, 0.2582948, 0.3768908, 0.3146693, 0.6853307,
+  "Carcharhinus acronotus", 0.1297838, 0.2570592, 0.3868429, 0.3354947, 0.6645053
+)
+
+
+# Prepare long format for stacked bar plot
+df_long <- df %>%
+  select(Species, WIC, BIC, TNW) %>%
+  pivot_longer(cols = c(WIC, BIC), names_to = "Component", values_to = "Value")
+
+# Stacked bar plot with labels inside + TNW above
+p1 <- ggplot(df_long, aes(x = Species, y = Value, fill = Component)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = round(Value, 3)),
+            position = position_stack(vjust = 0.5), size = 3, color = "black") +
+  geom_text(data = df, aes(x = Species, y = TNW + 0.01, label = paste0("TNW=", round(TNW, 3))),
+            inherit.aes = FALSE, size = 3.2, fontface = "bold") +
+  labs(y = "Niche breadth (Bray-Curtis distance)",
+       title = "Total Niche Width (TNW) partitioned into WIC and BIC") +
+  scale_fill_manual(values = c("WIC" = "#56B4E9", "BIC" = "#E69F00")) +
+  theme_classic(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+
+# Bar plot of WIC/TNW ratio with labels above
+p2 <- ggplot(df, aes(x = Species, y = WIC_TNW_ratio, fill = Species)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  geom_text(aes(label = round(WIC_TNW_ratio, 3)),
+            vjust = -0.3, size = 3.2, fontface = "bold") +
+  labs(y = "WIC/TNW ratio",
+       title = "Relative Individual Specialization (lower = more specialized)") +
+  theme_classic(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+
+# Stack the plots vertically
+p1 / p2
+```
 

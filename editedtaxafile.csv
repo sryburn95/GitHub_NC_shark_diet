@@ -1,0 +1,225 @@
+ASV,superkingdom,phylum,class,order,family,genus,species,Trophic_level,Trophic_level_SE,Trophic_level_rank,Trophic_level_category,Environment,Prey_depth,In_NC,IUCN_status
+MiFish_00001,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00011,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00120,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00353,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Larimus,Larimus fasciatus,3.6,0.3,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_00397,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00555,Eukaryota,Chordata,Actinopteri,Lutjaniformes,Haemulidae,Orthopristis,Orthopristis chrysoptera,3.4,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00625,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00636,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion nothus,4,0.6,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_00643,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cynoglossidae,Symphurus,NA,3.2,0.4,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal,demersal,Y,Not avaliable
+MiFish_00674,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00809,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00832,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00915,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00954,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01000,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01117,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01347,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Larimus,Larimus fasciatus,3.6,0.3,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_01517,Eukaryota,Chordata,Actinopteri,Tetraodontiformes,Monacanthidae,Stephanolepis,NA,2.6,0.1,NA,NA,NA,NA,Y,Not avaliable
+MiFish_01644,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cyclopsettidae,Etropus,Etropus crossotus,3.5,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01772,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01852,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01875,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01876,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01927,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_02055,Eukaryota,Chordata,Actinopteri,Scombriformes,Pomatomidae,Pomatomus,Pomatomus saltatrix,3.76,0,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; pelagic-oceanic; oceanodromous,pelagic-oceanic,Y,Vulnerable
+MiFish_00010,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_00015,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00036,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Myrophis,Myrophis punctatus,4.1,0.7,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; reef-associated,reef-associated,Y,Least concern
+MiFish_00037,Eukaryota,Chordata,Chondrichthyes,Carcharhiniformes,Carcharhinidae,Sphyrna,Sphyrna tiburo,3.9,0,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; reef-associated,reef-associated,Y,Endangered
+MiFish_00059,Eukaryota,Chordata,Chondrichthyes,Carcharhiniformes,Carcharhinidae,Sphyrna,Sphyrna tiburo,3.9,0,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; reef-associated,reef-associated,Y,Endangered
+MiFish_00132,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00162,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00174,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion regalis,4.05,0,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal; oceanodromous,demersal,Y,Endangered
+MiFish_00365,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion nothus,4,0.6,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_00477,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_00557,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion nothus,4,0.6,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_00573,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00583,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion nothus,4,0.6,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_00596,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cynoglossidae,Symphurus,Symphurus plagiusa,3.2,0.4,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_00663,Eukaryota,Chordata,Chondrichthyes,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus acronotus,4.4,0.5,Carnivore (4.1-4.5),Carnivore_three,Marine; reef-associated,reef-associated,Y,Endangered
+MiFish_00668,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion nothus,4,0.6,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,Y,Least concern
+MiFish_00738,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00740,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cyclopsettidae,Etropus,Etropus crossotus,3.5,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00797,Eukaryota,Chordata,Actinopteri,Clupeiformes,Engraulidae,Anchoa,Anchoa hepsetus,3.3,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; pelagic-neritic,pelagic-neritic,Y,Least concern
+MiFish_00808,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00818,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00823,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00838,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00840,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00847,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00851,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00856,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00870,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00874,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00903,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00905,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_00924,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00967,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01002,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01022,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01051,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01074,Eukaryota,Chordata,Actinopteri,Aulopiformes,Synodontidae,Synodus,Synodus foetens,4.54,0,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; reef-associated,reef-associated,Y,Least concern
+MiFish_01081,Eukaryota,Chordata,Actinopteri,Aulopiformes,Synodontidae,Synodus,Synodus foetens,4.54,0,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; reef-associated,reef-associated,Y,Least concern
+MiFish_01111,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01116,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01118,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01126,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01128,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01129,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01136,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01166,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01167,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01172,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01342,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01351,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01357,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01364,Eukaryota,Chordata,Actinopteri,Aulopiformes,Synodontidae,Synodus,Synodus foetens,4.54,0,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; reef-associated,reef-associated,Y,Least concern
+MiFish_01376,Eukaryota,Chordata,Actinopteri,Clupeiformes,Engraulidae,Anchoa,Anchoa hepsetus,3.3,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; pelagic-neritic,pelagic-neritic,Y,Least concern
+MiFish_01383,Eukaryota,Chordata,Actinopteri,Clupeiformes,Engraulidae,Anchoa,Anchoa hepsetus,3.3,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; pelagic-neritic,pelagic-neritic,Y,Least concern
+MiFish_01390,Eukaryota,Chordata,Actinopteri,Clupeiformes,Engraulidae,Anchoa,Anchoa hepsetus,3.3,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; pelagic-neritic,pelagic-neritic,Y,Least concern
+MiFish_01449,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01485,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion regalis,4.05,0,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal; oceanodromous,demersal,Y,Endangered
+MiFish_01548,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01551,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01571,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01580,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01593,Eukaryota,Chordata,Actinopteri,Aulopiformes,Synodontidae,Synodus,Synodus foetens,4.54,0,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; reef-associated,reef-associated,Y,Least concern
+MiFish_01604,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01647,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Ophichthus,Ophichthus gomesii,4,0.7,Carnivore (3.6-4.0),Carnivore_two,Marine; demersal,demersal,Y,Least concern
+MiFish_01649,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Ophichthus,Ophichthus gomesii,4,0.7,Carnivore (3.6-4.0),Carnivore_two,Marine; demersal,demersal,Y,Least concern
+MiFish_01658,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01661,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01760,Eukaryota,Chordata,Actinopteri,Perciformes,Triglidae,Prionotus,Prionotus longispinosus,3.7,0.6,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal,demersal,N,Least concern
+MiFish_01788,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01791,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01845,Eukaryota,Chordata,Actinopteri,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus keta,3.7,0.2,Carnivore (3.6-4.0),Carnivore_two,Marine; freshwater; brackish; benthopelagic; anadromous,benthopelagic,N,Not evaluated
+MiFish_01864,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01865,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01928,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01929,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01930,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01934,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01948,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01949,Eukaryota,Chordata,Actinopteri,Spariformes,Sparidae,Lagodon,Lagodon rhomboides,3.19,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; freshwater; demersal,demersal,Y,Least concern
+MiFish_01967,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Cynoscion,Cynoscion regalis,4.05,0,Carnivore (3.6-4.0),Carnivore_two,Marine; brackish; demersal; oceanodromous,demersal,Y,Endangered
+MiFish_00060,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Myrophis,Myrophis punctatus,4.1,0.7,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; reef-associated,reef-associated,Y,Least concern
+MiFish_00778,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_01638,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Myrophis,Myrophis punctatus,4.1,0.7,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; reef-associated,reef-associated,Y,Least concern
+MiFish_01639,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Ophichthus,Ophichthus gomesii,4,0.7,Carnivore (3.6-4.0),Carnivore_two,Marine; demersal,demersal,Y,Least concern
+MiFish_00553,Eukaryota,Chordata,Actinopteri,Clupeiformes,Clupeidae,Brevoortia,NA,2.05,0,Planktivore (2.0-2.5),Planktivore_one,NA,NA,Y,Not avaliable
+MiFish_00554,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cynoglossidae,Symphurus,NA,3.2,0.4,NA,NA,NA,NA,Y,Not avaliable
+MiFish_00560,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cynoglossidae,Symphurus,NA,3.2,0.4,NA,NA,NA,NA,Y,Not avaliable
+MiFish_00576,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cynoglossidae,Symphurus,NA,3.2,0.4,NA,NA,NA,NA,Y,Not avaliable
+MiFish_00642,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Cynoglossidae,Symphurus,NA,3.2,0.4,NA,NA,NA,NA,Y,Not avaliable
+MiFish_00739,Eukaryota,Chordata,Actinopteri,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus erectus,3.5,0.51,Carnivore (3.1-3.5),Carnivore_one,Marine; reef-associated; non-migratory,reef-associated,Y,Vulnerable
+MiFish_00795,Eukaryota,Chordata,Actinopteri,Pleuronectiformes,Paralichthyidae,Paralichthys,Paralichthys lethostigma,4.15,0,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; demersal,demersal,Y,Near threatened
+MiFish_00799,Eukaryota,Chordata,Actinopteri,Syngnathiformes,Syngnathidae,Syngnathus,Syngnathus louisianae,3.4,0.5,Carnivore (3.1-3.5),Carnivore_one,Marine; reef-associated,reef-associated,Y,Data deficient
+MiFish_00998,Eukaryota,Chordata,Actinopteri,Syngnathiformes,Syngnathidae,Syngnathus,Syngnathus louisianae,3.4,0.5,Carnivore (3.1-3.5),Carnivore_one,Marine; reef-associated,reef-associated,Y,Data deficient
+MiFish_01352,Eukaryota,Chordata,Actinopteri,Scombriformes,Trichiuridae,Trichiurus,Trichiurus lepturus,4.4,0.4,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; benthopelagic; amphidromous,benthopelagic,Y,Least concern
+MiFish_01398,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Ophichthus,Ophichthus gomesii,4,0.7,Carnivore (3.6-4.0),Carnivore_two,Marine; demersal,demersal,Y,Least concern
+MiFish_01488,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Ophichthus,Ophichthus gomesii,4,0.7,Carnivore (3.6-4.0),Carnivore_two,Marine; demersal,demersal,Y,Least concern
+MiFish_01497,Eukaryota,Chordata,Actinopteri,Scombriformes,Trichiuridae,Trichiurus,Trichiurus lepturus,4.4,0.4,Carnivore (4.1-4.5),Carnivore_three,Marine; brackish; benthopelagic; amphidromous,benthopelagic,Y,Least concern
+MiFish_01502,Eukaryota,Chordata,Actinopteri,NA,Sciaenidae,Leiostomus,Leiostomus xanthurus,3.2,0.1,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; demersal; oceanodromous,demersal,Y,Least concern
+MiFish_01642,Eukaryota,Chordata,Actinopteri,Anguilliformes,Ophichthidae,Ophichthus,Ophichthus gomesii,4,0.7,Carnivore (3.6-4.0),Carnivore_two,Marine; demersal,demersal,Y,Least concern
+BerryCrust_00000002,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000191,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00000195,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Arenaeus,Arenaeus cribrarius,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00000217,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000439,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000454,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000456,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes similis,3.05,0,Planktivore (2.6-3.0),Planktivore_two,Marine; brackish; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00000462,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000464,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000468,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000473,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000475,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00000486,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000492,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000494,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000507,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000520,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000528,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000529,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00000542,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000548,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000569,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus setiferus,3.58,0,Carnivore (3.1-3.5),Carnivore_one,Marine; brackish; benthic,benthic,Y,Not evaluated
+BerryCrust_00000587,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000589,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000612,Eukaryota,Arthropoda,Malacostraca,Decapoda,Panopeidae,Dyspanopeus,Dyspanopeus sayi,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Benthic,benthic,Y,Not evaluated
+BerryCrust_00000615,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00000622,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Arenaeus,Arenaeus cribrarius,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00000624,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Arenaeus,Arenaeus cribrarius,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00000625,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00000820,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000822,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00000826,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000830,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00000831,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00000843,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000850,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Achelous,Achelous gibbesii,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00000863,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000891,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000915,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000919,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000924,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00000926,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00001020,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001021,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001030,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001032,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001033,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001034,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001036,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001052,Eukaryota,Arthropoda,Malacostraca,Decapoda,Upogebiidae,Upogebia,Upogebia affinis,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Benthic,benthic,Y,Not evaluated
+BerryCrust_00001054,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001081,Eukaryota,Arthropoda,Malacostraca,Decapoda,Pinnotheridae,Pinnixa,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001237,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001252,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00001272,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Achelous,Achelous gibbesii,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00001319,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001390,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00001560,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001567,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001571,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00001573,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00001575,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001576,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00001579,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00001582,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00001583,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001584,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001588,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001589,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001592,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001594,Eukaryota,Arthropoda,Malacostraca,Stomatopoda,Squillidae,Squilla,Squilla empusa,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; benthic,benthic,Y,Not evaluated
+BerryCrust_00001597,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001598,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001601,Eukaryota,Arthropoda,Malacostraca,Decapoda,Ovalipidae,Ovalipes,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001603,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001608,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001614,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001617,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001627,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001630,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001640,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001651,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001670,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001671,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001680,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001689,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus,3.05,0,Planktivore (2.6-3.0),Planktivore_two,"Marine; brackish, freshwater; benthopelagic",benthopelagic,Y,Not evaluated
+BerryCrust_00001750,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001755,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001759,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001762,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001775,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001784,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001801,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001807,Eukaryota,Mollusca,Cephalopoda,Myopsida,Loliginidae,Lolliguncula,Lolliguncula brevis,4.27,0,Carnivore (4.1-4.5),Carnivore_three,Benthic; brackish,benthic,Y,Data deficient
+BerryCrust_00001815,Eukaryota,Arthropoda,Malacostraca,Decapoda,Ovalipidae,Ovalipes,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00001877,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes similis,3.05,0,Planktivore (2.6-3.0),Planktivore_two,Marine; brackish; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00001878,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Achelous,Achelous spinimanus,3.21,0,Carnivore (3.1-3.5),Carnivore_one,Marine; pelagic; tropical,pelagic,Y,Not evaluated
+BerryCrust_00002114,Eukaryota,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
+BerryCrust_00002195,Eukaryota,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes similis,3.05,0,Planktivore (2.6-3.0),Planktivore_two,Marine; brackish; benthopelagic,benthopelagic,Y,Not evaluated
+BerryCrust_00002322,Eukaryota,Arthropoda,Malacostraca,Decapoda,Pinnotheridae,NA,NA,3.21,0,Carnivore (3.1-3.5),Carnivore_one,NA,NA,Y,Not avaliable
