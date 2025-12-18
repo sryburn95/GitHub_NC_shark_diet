@@ -1,0 +1,225 @@
+"","superkingdom","phylum","class","order","family","genus","species"
+"MiFish_00001","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00011","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00120","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00353","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Larimus","Larimus fasciatus"
+"MiFish_00397","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00555","Eukaryota","Chordata","Actinopteri","Lutjaniformes","Haemulidae","Orthopristis","Orthopristis chrysoptera"
+"MiFish_00625","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00636","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion nothus"
+"MiFish_00643","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cynoglossidae","Symphurus",NA
+"MiFish_00674","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00809","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00832","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00915","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00954","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01000","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01117","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01347","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Larimus","Larimus fasciatus"
+"MiFish_01517","Eukaryota","Chordata","Actinopteri","Tetraodontiformes","Monacanthidae","Stephanolepis",NA
+"MiFish_01644","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cyclopsettidae","Etropus","Etropus crossotus"
+"MiFish_01772","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01852","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01875","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01876","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01927","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_02055","Eukaryota","Chordata","Actinopteri","Scombriformes","Pomatomidae","Pomatomus","Pomatomus saltatrix"
+"MiFish_00010","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_00015","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00036","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Myrophis","Myrophis punctatus"
+"MiFish_00037","Eukaryota","Chordata","Chondrichthyes","Carcharhiniformes","Carcharhinidae","Sphyrna","Sphyrna tiburo"
+"MiFish_00059","Eukaryota","Chordata","Chondrichthyes","Carcharhiniformes","Carcharhinidae","Sphyrna","Sphyrna tiburo"
+"MiFish_00132","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00162","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00174","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion regalis"
+"MiFish_00365","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion nothus"
+"MiFish_00477","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_00557","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion nothus"
+"MiFish_00573","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00583","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion nothus"
+"MiFish_00596","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cynoglossidae","Symphurus","Symphurus plagiusa"
+"MiFish_00663","Eukaryota","Chordata","Chondrichthyes","Carcharhiniformes","Carcharhinidae","Carcharhinus","Carcharhinus acronotus"
+"MiFish_00668","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion nothus"
+"MiFish_00738","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00740","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cyclopsettidae","Etropus","Etropus crossotus"
+"MiFish_00797","Eukaryota","Chordata","Actinopteri","Clupeiformes","Engraulidae","Anchoa","Anchoa hepsetus"
+"MiFish_00808","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00818","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00823","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00838","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00840","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00847","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00851","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00856","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00870","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00874","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00903","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00905","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_00924","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00967","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01002","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01022","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01051","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01074","Eukaryota","Chordata","Actinopteri","Aulopiformes","Synodontidae","Synodus","Synodus foetens"
+"MiFish_01081","Eukaryota","Chordata","Actinopteri","Aulopiformes","Synodontidae","Synodus","Synodus foetens"
+"MiFish_01111","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01116","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01118","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01126","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01128","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01129","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01136","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01166","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01167","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01172","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01342","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01351","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01357","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01364","Eukaryota","Chordata","Actinopteri","Aulopiformes","Synodontidae","Synodus","Synodus foetens"
+"MiFish_01376","Eukaryota","Chordata","Actinopteri","Clupeiformes","Engraulidae","Anchoa","Anchoa hepsetus"
+"MiFish_01383","Eukaryota","Chordata","Actinopteri","Clupeiformes","Engraulidae","Anchoa","Anchoa hepsetus"
+"MiFish_01390","Eukaryota","Chordata","Actinopteri","Clupeiformes","Engraulidae","Anchoa","Anchoa hepsetus"
+"MiFish_01449","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01485","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion regalis"
+"MiFish_01548","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01551","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01571","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01580","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01593","Eukaryota","Chordata","Actinopteri","Aulopiformes","Synodontidae","Synodus","Synodus foetens"
+"MiFish_01604","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01647","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Ophichthus","Ophichthus gomesii"
+"MiFish_01649","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Ophichthus","Ophichthus gomesii"
+"MiFish_01658","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01661","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01760","Eukaryota","Chordata","Actinopteri","Perciformes","Triglidae","Prionotus","Prionotus longispinosus"
+"MiFish_01788","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01791","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01845","Eukaryota","Chordata","Actinopteri","Salmoniformes","Salmonidae","Oncorhynchus","Oncorhynchus keta"
+"MiFish_01864","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01865","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01928","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01929","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01930","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01934","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01948","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01949","Eukaryota","Chordata","Actinopteri","Spariformes","Sparidae","Lagodon","Lagodon rhomboides"
+"MiFish_01967","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Cynoscion","Cynoscion regalis"
+"MiFish_00060","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Myrophis","Myrophis punctatus"
+"MiFish_00778","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_01638","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Myrophis","Myrophis punctatus"
+"MiFish_01639","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Ophichthus","Ophichthus gomesii"
+"MiFish_00553","Eukaryota","Chordata","Actinopteri","Clupeiformes","Clupeidae","Brevoortia",NA
+"MiFish_00554","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cynoglossidae","Symphurus",NA
+"MiFish_00560","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cynoglossidae","Symphurus",NA
+"MiFish_00576","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cynoglossidae","Symphurus",NA
+"MiFish_00642","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Cynoglossidae","Symphurus",NA
+"MiFish_00739","Eukaryota","Chordata","Actinopteri","Syngnathiformes","Syngnathidae","Hippocampus","Hippocampus erectus"
+"MiFish_00795","Eukaryota","Chordata","Actinopteri","Pleuronectiformes","Paralichthyidae","Paralichthys","Paralichthys lethostigma"
+"MiFish_00799","Eukaryota","Chordata","Actinopteri","Syngnathiformes","Syngnathidae","Syngnathus","Syngnathus louisianae"
+"MiFish_00998","Eukaryota","Chordata","Actinopteri","Syngnathiformes","Syngnathidae","Syngnathus","Syngnathus louisianae"
+"MiFish_01352","Eukaryota","Chordata","Actinopteri","Scombriformes","Trichiuridae","Trichiurus","Trichiurus lepturus"
+"MiFish_01398","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Ophichthus","Ophichthus gomesii"
+"MiFish_01488","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Ophichthus","Ophichthus gomesii"
+"MiFish_01497","Eukaryota","Chordata","Actinopteri","Scombriformes","Trichiuridae","Trichiurus","Trichiurus lepturus"
+"MiFish_01502","Eukaryota","Chordata","Actinopteri",NA,"Sciaenidae","Leiostomus","Leiostomus xanthurus"
+"MiFish_01642","Eukaryota","Chordata","Actinopteri","Anguilliformes","Ophichthidae","Ophichthus","Ophichthus gomesii"
+"BerryCrust_00000002","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000191","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00000195","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Arenaeus","Arenaeus cribrarius"
+"BerryCrust_00000217","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000439","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000454","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000456","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes similis"
+"BerryCrust_00000462","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000464","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000468","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000473","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000475","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00000486","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000492","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000494","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000507","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000520","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000528","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000529","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00000542","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000548","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000569","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus","Penaeus setiferus"
+"BerryCrust_00000587","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000589","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000612","Eukaryota","Arthropoda","Malacostraca","Decapoda","Panopeidae","Dyspanopeus","Dyspanopeus sayi"
+"BerryCrust_00000615","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00000622","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Arenaeus","Arenaeus cribrarius"
+"BerryCrust_00000624","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Arenaeus","Arenaeus cribrarius"
+"BerryCrust_00000625","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00000820","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000822","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00000826","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000830","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00000831","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00000843","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000850","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Achelous","Achelous gibbesii"
+"BerryCrust_00000863","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000891","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000915","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000919","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000924","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00000926","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00001020","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001021","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001030","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001032","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001033","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001034","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001036","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001052","Eukaryota","Arthropoda","Malacostraca","Decapoda","Upogebiidae","Upogebia","Upogebia affinis"
+"BerryCrust_00001054","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001081","Eukaryota","Arthropoda","Malacostraca","Decapoda","Pinnotheridae","Pinnixa",NA
+"BerryCrust_00001237","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001252","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00001272","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Achelous","Achelous gibbesii"
+"BerryCrust_00001319","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001390","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00001560","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001567","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001571","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00001573","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00001575","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001576","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00001579","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00001582","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00001583","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001584","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001588","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001589","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001592","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001594","Eukaryota","Arthropoda","Malacostraca","Stomatopoda","Squillidae","Squilla","Squilla empusa"
+"BerryCrust_00001597","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001598","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001601","Eukaryota","Arthropoda","Malacostraca","Decapoda","Ovalipidae","Ovalipes",NA
+"BerryCrust_00001603","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001608","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001614","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001617","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001627","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001630","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001640","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001651","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001670","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001671","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001680","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001689","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes sapidus"
+"BerryCrust_00001750","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001755","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001759","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001762","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001775","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001784","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001801","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00001807","Eukaryota","Mollusca","Cephalopoda","Myopsida","Loliginidae","Lolliguncula","Lolliguncula brevis"
+"BerryCrust_00001815","Eukaryota","Arthropoda","Malacostraca","Decapoda","Ovalipidae","Ovalipes",NA
+"BerryCrust_00001877","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes similis"
+"BerryCrust_00001878","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Achelous","Achelous spinimanus"
+"BerryCrust_00002114","Eukaryota","Arthropoda","Malacostraca","Decapoda","Penaeidae","Penaeus",NA
+"BerryCrust_00002195","Eukaryota","Arthropoda","Malacostraca","Decapoda","Portunidae","Callinectes","Callinectes similis"
+"BerryCrust_00002322","Eukaryota","Arthropoda","Malacostraca","Decapoda","Pinnotheridae",NA,NA

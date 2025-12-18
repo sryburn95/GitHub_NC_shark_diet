@@ -1,0 +1,127 @@
+---
+title: "NC_Shark_Diet_Final"
+author: "Savannah Ryburn"
+date: "2025-12-18"
+output: html_document
+---
+
+Starting Phlyoseq
+```{r}
+library(phyloseq)
+library(ggplot2)
+library(tibble)
+library(dplyr)
+library(tidyverse)
+library(vegan)
+library(tidyr)
+library(car)
+library(rstatix)
+library(devtools)
+library(pairwiseAdonis)
+library(spaa)
+library(dietr)
+library(ggridges)
+
+#install.packages("ggraph") # for taxatree_plots()
+#install.packages("DT") # for tax_fix_interactive()
+#install.packages("corncob") # for example datasets and beta binomial models
+#if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+#BiocManager::install(c("phyloseq", "microbiome", "ComplexHeatmap"), update = FALSE)
+
+#install.packages(
+#  "microViz",
+#  repos = c(davidbarnett = "https://david-barnett.r-universe.dev", getOption("repos"))
+#)
+library(microViz)
+library(ggraph)
+library(DT)
+library(corncob)
+
+#install.packages("remotes")
+#remotes::install_github("vmikk/metagMisc")
+library(metagMisc)
+```
+
+```{r}
+#Load phyloseq object of just fecal swabs made in 05 script:
+NC_Sharks.ps<-readRDS(file = "/Users/savannahryburn/Desktop/Chapter2/GitHub_NC_shark_diet/NC_Sharks.ps.RDS")
+
+NC_Sharks.ps
+```
+
+```{r}
+#Make files to upload to FigShare for journal submission
+NC_Sharks.ps.df <- as.data.frame(cbind(sample_data(NC_Sharks.ps)))
+View(NC_Sharks.ps.df)
+write.csv(NC_Sharks.ps.df, "./Chapter2sd")
+
+NC_Sharks.ps.tt <- as.data.frame(cbind(tax_table(NC_Sharks.ps)))
+View(NC_Sharks.ps.tt)
+write.csv(NC_Sharks.ps.tt, "./Chapter2tt")
+
+NC_Sharks.ps.otu <- as.data.frame(cbind(otu_table(NC_Sharks.ps)))
+View(NC_Sharks.ps.otu)
+write.csv(NC_Sharks.ps.otu, "./Chapter2otu")
+```
+
+```{r}
+#add new columns to data sheet (e.g., trophic levels)
+
+##for prey data
+newtaxa.df<-as.data.frame(cbind(tax_table(NC_Sharks.ps)))
+
+#write.csv(newtaxa.df, "../Chapter2/taxafiletoedit.csv")
+
+##now edit the file and load it in using this
+#(I changed this from row.names = 1 to NULL so that the first column wouldn't be a header - make sure this didn't mess anything else up I did this for the trophic level calculations)
+editedtaxa.df <- read.csv("../Chapter2/editedtaxafile.csv", header = FALSE, row.names = 1)
+
+names(editedtaxa.df) <- lapply(editedtaxa.df[1, ], as.character)
+editedtaxa.df <- editedtaxa.df[-1,] 
+View(editedtaxa.df)
+
+
+##for shark data
+newsample.df<-as.data.frame(cbind(sample_data(NC_Sharks.ps)))
+
+#write.csv(newsample.df, "../Chapter2/samplefiletoedit.csv")
+
+##now edit the file and load it in using this
+editedsample.df <- read.csv("../Chapter2/editedsamplefile.csv", row.names = "X")
+#View(editedsample.df)
+
+#make new phyloseq object so I don't mess up th original
+NC_Sharks1.ps<-NC_Sharks.ps
+
+sample_data(NC_Sharks1.ps)<-editedsample.df
+#tax_table(NC_Sharks1.ps)<-editedtaxa.df
+tax_table(NC_Sharks1.ps) <- as.matrix(editedtaxa.df)
+
+sample_variables(NC_Sharks1.ps)
+
+#merge motus by prey species
+NC_Shark_prey_species_merge.ps <- tax_glom(NC_Sharks1.ps, taxrank = "species", NArm = FALSE)
+
+
+#Following the microviz tutorial https://david-barnett.github.io/microViz/index.html
+
+# Only the top 20 species
+
+# Removing the NAs (anything that wasn't IDed to species gets deleted here)
+NC_Shark_prey_species_merge.ps.1<-tax_glom(NC_Shark_prey_species_merge.ps, taxrank = "species", NArm = TRUE)
+rank_names(NC_Shark_prey_species_merge.ps.1)
+
+NC_Shark_prey_species_merge.ps.1 %>%
+  tax_fix(
+    min_length = 4,
+    unknowns = c(""),
+    sep = "", anon_unique = TRUE,
+    suffix_rank = "classified"
+  )
+```
+
+```{r}
+
+```
+
+
