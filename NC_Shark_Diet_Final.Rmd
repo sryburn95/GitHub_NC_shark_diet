@@ -40,7 +40,7 @@ library(corncob)
 #install.packages("remotes")
 #remotes::install_github("vmikk/metagMisc")
 library(metagMisc)
-install.packages("iNEXT")
+#install.packages("iNEXT")
 library(iNEXT)
 ```
 
@@ -711,6 +711,24 @@ View(permanova)
 
 set.seed(200)
 pairwise.adonis(bray_dist_matrix, phyloseq::sample_data(pseq_fecal)$Species..scientific.name.)
+
+
+# 1. Calculate multivariate dispersion (PERMDISP)
+# 'bray_dist_matrix' is your existing distance object
+# 'Species..scientific.name.' is your shark species column
+groups <- phyloseq::sample_data(pseq_fecal)$Species..scientific.name.
+dispersion <- betadisper(bray_dist_matrix, groups)
+
+# 2. Test for significance
+# This tells you if the "spread" is significantly different between species
+disp_test <- permutest(dispersion, pairwise = TRUE, permutations = 999)
+print(disp_test)
+
+
+# This will show you the average distance to centroid for each species
+dispersion$group.distances
+#Higher distance: A more "generalist" or opportunistic diet (high variation).
+#Lower distance: A more "specialist" or consistent diet (low variation).
 ```
 
 ```{r}
@@ -756,6 +774,17 @@ permanova_AS.sex <- vegan::adonis2(bray_dist_matrix_AS ~ phyloseq::sample_data(p
 permanova_AS.sex
 View(permanova_AS.sex)
 
+
+# 1. Calculate dispersion
+groups_AS <- phyloseq::sample_data(pseq_fecal_AS)$Sex..male.female.
+disp_AS <- vegan::betadisper(bray_dist_matrix_AS, groups_AS)
+
+# 2. Test for significance
+permutest(disp_AS, pairwise = TRUE)
+
+# 3. Check average distances (Breadth)
+disp_AS$group.distances
+
 ######################################################################################################################
 
 #Now only by shark species (Blacknose)
@@ -790,13 +819,24 @@ MDS_BN_Sex<- pseq_fecal_BN %>%
 
 MDS_BN_Sex
 
-# Statistics for MDS plot (prey at genus level) - bray (Atlantic sharpnose)
+# Statistics for MDS plot (prey at genus level) - bray (Blacknose)
 bray_dist_matrix_BN <- phyloseq::distance(pseq_fecal_BN, method ="bray")
 
 set.seed(200)
 permanova_BN.sex <- vegan::adonis2(bray_dist_matrix_BN ~ phyloseq::sample_data(pseq_fecal_BN)$Sex..male.female.)
 permanova_BN.sex
 View(permanova_BN.sex)
+
+# 1. Calculate dispersion
+groups_BN <- phyloseq::sample_data(pseq_fecal_BN)$Sex..male.female.
+disp_BN <- vegan::betadisper(bray_dist_matrix_BN, groups_BN)
+
+# 2. Test for significance
+permutest(disp_BN, pairwise = TRUE)
+
+# 3. Check average distances (Breadth)
+disp_BN$group.distances
+
 
 ######################################################################################################################
 
@@ -1185,6 +1225,16 @@ permanova_AS.age <- vegan::adonis2(jsd_dist_matrix_AS ~ phyloseq::sample_data(ps
 permanova_AS.age
 View(permanova_AS.age)
 
+#PERMDISP
+# 1. Calculate dispersion using the JSD matrix
+groups_AS_age <- phyloseq::sample_data(pseq_fecal_AS)$Age
+disp_AS_age <- vegan::betadisper(jsd_dist_matrix_AS, groups_AS_age)
+
+# 2. Test for significance
+permutest(disp_AS_age, pairwise = TRUE)
+
+# 3. Check average distances (Dietary Breadth)
+disp_AS_age$group.distances
 
 
 
