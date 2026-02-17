@@ -40,6 +40,8 @@ library(corncob)
 #install.packages("remotes")
 #remotes::install_github("vmikk/metagMisc")
 library(metagMisc)
+install.packages("iNEXT")
+library(iNEXT)
 ```
 
 ```{r}
@@ -47,6 +49,7 @@ library(metagMisc)
 NC_Sharks.ps<-readRDS(file = "/Users/savannahryburn/Desktop/Chapter2/GitHub_NC_shark_diet/GitHub_NC_shark_diet/NC_Sharks.ps.RDS")
 
 NC_Sharks.ps
+View(NC_Sharks.ps)
 ```
 
 ```{r}
@@ -1620,3 +1623,83 @@ p2 <- ggplot(df, aes(x = Species, y = WIC_TNW_ratio, fill = Species)) +
 p1 / p2
 ```
 
+```{r}
+otu_df_inext<-cbind(data.frame(otu_table(NC_Shark_prey_species_merge.ps.1)))
+otu_df_inext<-cbind(data.frame(otu_table(NC_Sharks.ps)))
+View(otu_df_inext)
+#This takes a while
+iNext_NCshark0<-iNEXT(otu_df_inext, q=0, datatype="abundance", size=NULL, knots=40, se=TRUE, conf=0.95, nboot=100, endpoint=100000)
+
+iNext_NCshark1<-iNEXT(otu_df_inext, q=1, datatype="abundance", size=NULL, knots=40, se=TRUE, conf=0.95, nboot=100, endpoint=100000)
+
+iNext_NCshark2<-iNEXT(otu_df_inext, q=2, datatype="abundance", size=NULL, knots=40, se=TRUE, conf=0.95, nboot=100, endpoint=100000)
+
+#Sample-size-based R/E curve = type=1
+ggiNEXT(iNext_NCshark0, type = 1, se = TRUE)+
+  title("ASV Diversity Rarefaction and Extrapolation Curves by Sample")+
+  xlab("Assigned ASV Reads")+
+  ylab("ASV Richness")+
+  theme(legend.position = 'none')
+
+# Use labs() instead of title/xlab/ylab
+iNEXT_plot <- ggiNEXT(iNext_NCshark0, type = 1, se = TRUE) +
+  labs(
+    title = "ASV Diversity Rarefaction and Extrapolation Curves by Sample",
+    x = "Assigned ASV Reads",
+    y = "ASV Richness"
+  ) +
+  theme(legend.position = 'none')
+
+iNEXT_plot
+
+#Remove CI shading
+iNEXT_plot <- ggiNEXT(iNext_NCshark0, type = 1, se = FALSE) +
+  labs(
+    title = "ASV Diversity Rarefaction and Extrapolation Curves by Sample",
+    x = "Assigned ASV Reads",
+    y = "ASV Richness"
+  ) +
+  theme_bw() + # Adding a clean background helps line visibility
+  theme(legend.position = 'none')
+
+iNEXT_plot
+
+####### Separated by shark species
+
+all_plot_data <- lapply(names(inext_results_list), function(sp_name) {
+  # Extract the 'AsyEst' or plotting data
+  # Type 1 is the sample-size-based R/E curve
+  df <- fortify(inext_results_list[[sp_name]], type = 1)
+  
+  # FORCE the column name to be 'method' if it's currently named something else
+  if("lty" %in% colnames(df)) { df$method <- df$lty }
+  if("Method" %in% colnames(df)) { df$method <- df$Method }
+  
+  df$SharkSpecies <- sp_name  
+  return(df)
+}) %>% bind_rows()
+
+
+iNEXT_plot <- ggplot(all_plot_data, aes(x = x, y = y, colour = Assemblage)) +
+  # Using Method (Capital M) and Assemblage (Capital A)
+  geom_line(aes(linetype = Method), linewidth = 0.1) + 
+  scale_linetype_manual(values = c("interpolated" = "solid", 
+                                   "extrapolated" = "dashed",
+                                   "Observed" = "solid",
+                                   "Extrapolated" = "dashed",
+                                   "Rarefaction" = "solid")) + # Added just in case
+  facet_wrap(~SharkSpecies, scales = "free_x") +
+  labs(
+    title = "ASV Diversity Rarefaction Curves by Shark Species",
+    x = "Assigned ASV Reads",
+    y = "ASV Richness"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    strip.text = element_text(face = "italic"),
+    panel.grid.minor = element_blank()
+  )
+
+iNEXT_plot
+```
