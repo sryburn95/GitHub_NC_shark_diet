@@ -1702,4 +1702,61 @@ iNEXT_plot <- ggplot(all_plot_data, aes(x = x, y = y, colour = Assemblage)) +
   )
 
 iNEXT_plot
+
+
+
+
+
+
+
+
+
+library(dplyr)
+
+# 1. Create a filtered version of your data
+# We keep everything for the other species, but limit Bonnetheads to 30,000
+all_plot_data_zoomed <- all_plot_data %>%
+  filter(
+    (SharkSpecies != "Sphyrna tiburo" & x <= 100000) | # Replace with actual Bonnethead scientific name
+    (SharkSpecies == "Sphyrna tiburo" & x <= 60000)    # Cap Bonnetheads at 30k
+  )
+
+# 2. Run your plot code using the new 'all_plot_data_zoomed'
+iNEXT_plot <- ggplot(all_plot_data_zoomed, aes(x = x, y = y, colour = Assemblage)) +
+  geom_line(aes(linetype = Method), linewidth = 0.2) + # Slightly thicker for visibility
+  scale_linetype_manual(values = c("interpolated" = "solid", 
+                                   "extrapolated" = "dashed",
+                                   "Observed" = "solid",
+                                   "Extrapolated" = "dashed",
+                                   "Rarefaction" = "solid")) +
+  facet_wrap(~SharkSpecies, scales = "free_x") +
+  labs(
+    title = "ASV Diversity Rarefaction Curves by Shark Species",
+    x = "Assigned ASV Reads",
+    y = "ASV Richness"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    strip.text = element_text(face = "italic"),
+    panel.grid.minor = element_blank()
+  )
+
+iNEXT_plot
+
+
+library(dplyr)
+
+# Replace "Sphyrna tiburo" with the exact name in your data
+bonnethead_stats <- all_plot_data %>%
+  filter(SharkSpecies == "Sphyrna tiburo") %>%
+  group_by(Assemblage) %>%
+  summarize(
+    Max_Reads = max(x),
+    Max_Richness = max(y)
+  ) %>%
+  arrange(desc(Max_Reads))
+
+# View the results
+print(bonnethead_stats)
 ```
